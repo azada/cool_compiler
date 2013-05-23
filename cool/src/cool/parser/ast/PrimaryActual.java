@@ -1,5 +1,6 @@
 package cool.parser.ast;
 
+import cool.symbol.SymbolNode;
 import cool.symbol.SymbolTable;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class PrimaryActual extends Expr {
         this.actuals = actuals;
     }
     @Override
-    public boolean check(SymbolTable table) {
+    public boolean check(SymbolNode pTable) {
         //To change body of implemented methods use File | Settings | File Templates.
         return false;
     }

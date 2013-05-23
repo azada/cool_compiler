@@ -1,5 +1,6 @@
 package cool.parser.ast;
 
+import cool.symbol.SymbolNode;
 import cool.symbol.SymbolTable;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class Extends extends Node{
         this.native_type = true;
     }
     @Override
-    public boolean check(SymbolTable table) {
+    public boolean check(SymbolNode pTable) {
         //To change body of implemented methods use File | Settings | File Templates.
         return false;
     }

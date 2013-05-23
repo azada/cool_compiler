@@ -1,5 +1,6 @@
 package cool.parser.ast;
 
+import cool.symbol.SymbolNode;
 import cool.symbol.SymbolTable;
 
 /**
@@ -23,7 +24,7 @@ public class VarExpr extends Expr {
     }
 
     @Override
-    public boolean check(SymbolTable table) {
+    public boolean check(SymbolNode pTable) {
         //To change body of implemented methods use File | Settings | File Templates.
         return false;
     }

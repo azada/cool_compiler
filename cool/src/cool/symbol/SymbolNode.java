@@ -13,21 +13,21 @@ import java.util.HashMap;
 public class SymbolNode {
     SymbolNode parent = null;
     ArrayList<SymbolNode> childList ;
-    public SymbolTable table;
+    public HashMap<String, SymbolItem> symbolTable;
 
     public SymbolNode(SymbolNode parent) {
         this.parent = parent;
-        table = new SymbolTable();
+        symbolTable = new HashMap<String, SymbolItem>();
     }
 
     public SymbolNode() {
-        table = new SymbolTable();
+        symbolTable = new HashMap<String, SymbolItem>();
     }
 
     public SymbolItem lookup(String id){
-        if (this.table.symbolTable.containsKey(id)){
+        if (this.symbolTable.containsKey(id)){
             //now we return the symbolItem object
-            return this.table.symbolTable.get(id);
+            return this.symbolTable.get(id);
         }
         else{
             if (this.parent == null){
@@ -38,7 +38,7 @@ public class SymbolNode {
     }
 
     public void insert(SymbolItem symbolItem){
-        table.symbolTable.put(symbolItem.id, symbolItem);
+        symbolTable.put(symbolItem.id, symbolItem);
     }
 
 
