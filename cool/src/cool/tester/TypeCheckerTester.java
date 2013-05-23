@@ -27,6 +27,7 @@ public class TypeCheckerTester extends TestCase{
             parser.checker();
             Program.printErrors();
             Program.clear();
+            System.out.println("**************************************************************************************");
 
             Assert.assertTrue(true);
 
@@ -48,6 +49,7 @@ public class TypeCheckerTester extends TestCase{
             parser.checker();
             Program.printErrors();
             Program.clear();
+            System.out.println("**************************************************************************************");
 
             Assert.assertTrue(true);
 

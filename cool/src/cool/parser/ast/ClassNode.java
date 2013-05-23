@@ -37,14 +37,18 @@ public class ClassNode extends Node {
     public boolean check(SymbolNode pTable) {
         boolean result = true;
         if (Program.getInstance().typeTable.containsKey(type)){
-            Program.addError(new Exeption("Type "+ type + " has already been declared"));
+            Program.addError(new Exeption("Class "+ type + " has already been declared" , this));
             result =  false;
         }
-        Program.getInstance().typeTable.put(type, new HashMap<String, String>());
+        else {
+            Program.getInstance().typeTable.put(type, new HashMap<String, String>());
+        }
+        this.symbolNode.setParent(pTable);
 
         for (int i=0 ; i < this.featureList.size(); i++){
-            ((Feature)(this.featureList.get(i))).symbolNode.setParent(this.symbolNode);
-             result = result && ((Feature)this.featureList.get(i)).check(this.symbolNode);
+
+             boolean res = ((Feature)this.featureList.get(i)).check(this.symbolNode);
+             result = result && res;
         }
         return result;
         //To change body of implemented methods use File | Settings | File Templates.

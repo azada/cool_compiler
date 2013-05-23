@@ -74,7 +74,8 @@ public class MyCoolParser {
     public boolean checker(){
         boolean result = true;
         for(int i = 0 ; i< Program.getClasses().size(); i++){
-            result = result && (((ClassNode)Program.getClasses().get(i)).check(Program.getSymbolNode()));
+            boolean cn = (((ClassNode)Program.getClasses().get(i)).check(Program.getSymbolNode()));
+            result = result && cn;
         }
         return result;
     }

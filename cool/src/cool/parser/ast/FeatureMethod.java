@@ -32,11 +32,15 @@ public class FeatureMethod extends Feature {
     public boolean check(SymbolNode pTable) {
         boolean result = true;
         //first we make sure it hasn't been defined before
+//        System.out.println("pTable = " + pTable.type);
         if ( Program.typeTable.containsKey(pTable.type))
         {
+//            System.out.println("hell1");
+//            System.out.println("this.id = " + this.id);
+//            System.out.println("pTable = " + pTable.type);
             if (Program.typeTable.get(pTable.type).containsKey(this.id)){
-                System.out.println("hello");
-                Program.addError(new Exeption("method "+ this.id + " has douplicate definitions "));
+//                System.out.println("hello");
+                Program.addError(new Exeption("method "+ this.id + " has duplicate definitions " , this));
                 result = false;
             }
         }
@@ -45,7 +49,8 @@ public class FeatureMethod extends Feature {
             ((Formal)(formals.get(i))).symbolNode.setParent(this.symbolNode);
             result = result && ((Formal)formals.get(i)).check(this.symbolNode);
         }
-        result = result && expr.check(this.symbolNode);
+        boolean expres =  expr.check(this.symbolNode);
+        result = result &&  expres;
         return result;
     }
     @Override

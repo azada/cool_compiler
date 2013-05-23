@@ -1,5 +1,7 @@
 package cool.symbol;
 
+import beaver.Symbol;
+
 /**
  * Created with IntelliJ IDEA.
  * User: azada
@@ -9,9 +11,10 @@ package cool.symbol;
  */
 public class Exeption {
     String errorMsg;
-
-    public Exeption(String errorMsg) {
+    Symbol errorInfo ;
+    public Exeption(String errorMsg, Symbol e) {
         this.errorMsg = errorMsg;
+        this.errorInfo = e;
     }
     public void pritnError(){
         System.out.println(errorMsg);
