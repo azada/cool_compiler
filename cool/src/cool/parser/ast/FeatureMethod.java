@@ -31,26 +31,23 @@ public class FeatureMethod extends Feature {
     @Override
     public boolean check(SymbolNode pTable) {
         boolean result = true;
-        //first we make sure it hasn't been defined before
-//        System.out.println("pTable = " + pTable.type);
-        if ( Program.typeTable.containsKey(pTable.type))
+
+        if ( Program.typeTableContains(pTable.type))
         {
-//            System.out.println("hell1");
-//            System.out.println("this.id = " + this.id);
-//            System.out.println("pTable = " + pTable.type);
-            if (Program.typeTable.get(pTable.type).containsKey(this.id)){
-//                System.out.println("hello");
+            if (Program.getTableRow(pTable.type).containsKey(this.id)){
                 Program.addError(new Exeption("method "+ this.id + " has duplicate definitions " , this));
                 result = false;
             }
         }
-        Program.getInstance().typeTable.get(pTable.type).put(id, type);
+        //we set the parent node to be the pTable
+        this.symbolNode.setParent(pTable);
+        Program.getInstance().getTableRow(pTable.type).put(id, type);
         for (int i = 0 ; i< formals.size() ; i++){
-            ((Formal)(formals.get(i))).symbolNode.setParent(this.symbolNode);
-            result = result && ((Formal)formals.get(i)).check(this.symbolNode);
+            boolean fml = ((Formal)formals.get(i)).check(this.symbolNode);
+            result = result &&fml;
         }
-        boolean expres =  expr.check(this.symbolNode);
-        result = result &&  expres;
+        boolean express =  expr.check(this.symbolNode);
+        result = result &&  express;
         return result;
     }
     @Override

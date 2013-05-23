@@ -17,7 +17,7 @@ public class ClassNode extends Node {
     Extends ext;
     ArrayList varFormals;
     ArrayList featureList;
-
+    boolean defined = true;
     SymbolNode symbolNode;
 
     public ClassNode(String type, ArrayList varFormals, Extends ext, ArrayList featureList) {
@@ -27,26 +27,34 @@ public class ClassNode extends Node {
         this.featureList = featureList;
         symbolNode = new SymbolNode() ;
         symbolNode.type  = new String(type);
-        for (int i=0 ; i<varFormals.size(); i++){
-            SymbolItem temp = new SymbolItem(((Var)varFormals.get(i)).id, ((Var)varFormals.get(i)).type, false);
-            symbolNode.insert(temp);
-        }
+
+
     }
 
+
+    public boolean shallowCheck(SymbolNode pTable){
+        boolean result = true;
+        if (Program.getInstance().typeTableContains(type)){
+            Program.addError(new Exeption("Class "+ type + " has already been declared" , this));
+            defined = false;
+            result = false;
+        }
+        else {
+            Program.getInstance().typeTablePut(type, new HashMap<String, String>());
+        }
+        return result;
+    }
     @Override
     public boolean check(SymbolNode pTable) {
         boolean result = true;
-        if (Program.getInstance().typeTable.containsKey(type)){
-            Program.addError(new Exeption("Class "+ type + " has already been declared" , this));
-            result =  false;
-        }
-        else {
-            Program.getInstance().typeTable.put(type, new HashMap<String, String>());
+        result = result && defined;
+        for (int i=0 ; i<varFormals.size(); i++){
+            boolean vf = ((Var)this.varFormals.get(i)).check(this.symbolNode);
+            result = result && vf;
         }
         this.symbolNode.setParent(pTable);
 
         for (int i=0 ; i < this.featureList.size(); i++){
-
              boolean res = ((Feature)this.featureList.get(i)).check(this.symbolNode);
              result = result && res;
         }
@@ -67,7 +75,6 @@ public class ClassNode extends Node {
             if (i < (varFormals.size() - 1)) {
                 JSONLogger.nextAttribute();
             }
-
         }
         JSONLogger.closeListAttribute();
 

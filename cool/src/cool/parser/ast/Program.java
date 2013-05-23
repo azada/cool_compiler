@@ -16,23 +16,36 @@ import java.util.HashSet;
  */
 public class Program {
 
-    public static ArrayList classes = new ArrayList();
-    public static HashMap<String,HashMap<String, String>> typeTable = new HashMap<String, HashMap<String, String>>() ;
+    private static ArrayList classes = new ArrayList();
+    private static HashMap<String,HashMap<String, String>> typeTable = new HashMap<String, HashMap<String, String>>() ;
     public static SymbolNode programSymbolNode = new SymbolNode();
-    public static ArrayList<Exeption> errorList = new ArrayList<Exeption>();
+    private static ArrayList<Exeption> errorList = new ArrayList<Exeption>();
     private static Program instance = new Program();
 
     private Program() {
-        typeTable.put("Int", null);
-        typeTable.put("String", null);
-        typeTable.put("Boolean", null);
+
     }
     public static Program getInstance(){
+        if (instance.typeTable.isEmpty()){
+            instance.typeTable.put("Int", null);
+            instance.typeTable.put("String", null);
+            instance.typeTable.put("Boolean", null);
+        }
         return instance;
     }
     public static ArrayList getClasses(){
         return classes;
     }
+    public static boolean typeTableContains(String a){
+        return instance.typeTable.containsKey(a);
+    }
+    public static HashMap<String, String> getTableRow(String a){
+        return instance.typeTable.get(a);
+    }
+    public static void typeTablePut(String a , HashMap<String, String> b){
+        instance.typeTable.put(a, b);
+    }
+
     public static void setClasses(ArrayList cls){
         classes = cls;
     }

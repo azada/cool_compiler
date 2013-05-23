@@ -58,8 +58,6 @@ public class MyCoolParser {
                     JSONLogger.nextAttribute();
                 }
 
-
-
             }
             JSONLogger.closeListAttribute();
             JSONLogger.closeBrace();
@@ -72,9 +70,17 @@ public class MyCoolParser {
 
     }
     public boolean checker(){
-        boolean result = true;
+        boolean result = shallowChecker();
         for(int i = 0 ; i< Program.getClasses().size(); i++){
             boolean cn = (((ClassNode)Program.getClasses().get(i)).check(Program.getSymbolNode()));
+            result = result && cn;
+        }
+        return result;
+    }
+    public boolean shallowChecker(){
+        boolean result = true;
+        for(int i = 0 ; i< Program.getClasses().size(); i++){
+            boolean cn = (((ClassNode)Program.getClasses().get(i)).shallowCheck(Program.getSymbolNode()));
             result = result && cn;
         }
         return result;

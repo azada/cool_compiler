@@ -4,8 +4,8 @@
     <list default="true" id="560adbad-0a6c-41f4-8227-1f52da683cd2" name="Default" comment="" />
     <ignored path="cool.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369020241525" ignored="false" />
-    <file path="/Dummy.txt" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1368487934806" ignored="false" />
+    <file path="/fragment.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369351800374" ignored="false" />
+    <file path="/Dummy.txt" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369351800374" ignored="false" />
     <file path="/Expr.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369090993880" ignored="false" />
     <file path="/ExprType.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1368942432064" ignored="false" />
     <file path="/Operand.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1368942672297" ignored="false" />
@@ -36,6 +36,8 @@
     <file path="/UnaryMinus.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369093729274" ignored="false" />
     <file path="/UnaryRealOperation.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369094853493" ignored="false" />
     <file path="/UnaryBooleanOperation.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369093753865" ignored="false" />
+    <file path="/ClassNode.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369351166917" ignored="false" />
+    <file path="/MyCoolParser.java" changelist="560adbad-0a6c-41f4-8227-1f52da683cd2" time="1369351194098" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -92,6 +93,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -113,7 +115,7 @@
       <file leaf-file-name="ExpOperation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/ExpOperation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="31" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
+            <state line="22" column="31" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -149,7 +151,7 @@
       <file leaf-file-name="BooleanNode.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/BooleanNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
+            <state line="21" column="0" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -164,10 +166,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BExpr.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/BExpr.java">
+      <file leaf-file-name="ClassNode.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/ClassNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="30" selection-start="544" selection-end="544" vertical-scroll-proportion="0.44563106">
+            <state line="43" column="31" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.77360636">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyCoolParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cool/MyCoolParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="175" selection-start="1852" selection-end="1852" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -183,8 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/cool/parser/ast/Expr.java" />
-        <option value="$PROJECT_DIR$/src/cool/parser/ast/StringNode.java" />
         <option value="$PROJECT_DIR$/src/cool/parser/ast/LessOrEqual.java" />
         <option value="$PROJECT_DIR$/src/cool/parser/ast/Equals.java" />
         <option value="$PROJECT_DIR$/src/cool/parser/ast/LessThan.java" />
@@ -199,12 +208,15 @@
         <option value="$PROJECT_DIR$/src/cool/parser/ast/UnaryRealOperation.java" />
         <option value="$PROJECT_DIR$/src/cool/cool.grammar" />
         <option value="$PROJECT_DIR$/src/cool/parser/ast/BExpr.java" />
+        <option value="$PROJECT_DIR$/src/cool/parser/ast/ClassNode.java" />
+        <option value="$PROJECT_DIR$/src/cool/MyCoolParser.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="50" />
     <option name="y" value="22" />
-    <option name="width" value="2241" />
+    <option name="width" value="1870" />
     <option name="height" value="1178" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -255,6 +267,20 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -280,6 +306,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testcases" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,20 +419,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,19 +435,19 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/cool" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ParserTester">
+  <component name="RunManager" selected="JUnit.TypeCheckerTester">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -434,19 +460,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -474,6 +487,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -526,12 +552,12 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="ParserTester" type="JUnit" factoryName="JUnit">
+    <configuration default="false" name="TypeCheckerTester" type="JUnit" factoryName="JUnit">
       <module name="cool" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="cool.Tester" />
-      <option name="MAIN_CLASS_NAME" value="cool.tester.ParserTester" />
+      <option name="PACKAGE_NAME" value="cool.tester" />
+      <option name="MAIN_CLASS_NAME" value="cool.tester.TypeCheckerTester" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -550,7 +576,7 @@
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.MyCoolMain" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ParserTester" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TypeCheckerTester" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -584,7 +610,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2241" height="1178" extended-state="0" />
+    <frame x="50" y="22" width="1870" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -595,17 +621,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14272211" sideWeight="0.97811323" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16765375" sideWeight="0.8442419" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20175439" sideWeight="0.85727787" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15512465" sideWeight="0.9990888" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32974318" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14333057" sideWeight="0.97811323" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1667426" sideWeight="0.8442419" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -725,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/RExpr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="31" selection-start="755" selection-end="755" vertical-scroll-proportion="0.67204845">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/Expr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="22" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
@@ -741,7 +760,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/ExpOperation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
+        <state line="22" column="31" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -767,11 +786,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/BooleanNode.java">
+    <entry file="file://$PROJECT_DIR$/src/cool/cool.grammar">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="98" column="72" selection-start="3279" selection-end="3279" vertical-scroll-proportion="0.15337424" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/StringNode.java">
@@ -781,14 +798,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cool/cool.grammar">
+    <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/BooleanNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="72" selection-start="3279" selection-end="3279" vertical-scroll-proportion="0.15337424" />
+        <state line="21" column="0" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/BExpr.java">
+    <entry file="file://$PROJECT_DIR$/src/cool/MyCoolParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="30" selection-start="544" selection-end="544" vertical-scroll-proportion="0.44563106">
+        <state line="62" column="175" selection-start="1852" selection-end="1852" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cool/parser/ast/ClassNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="31" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.77360636">
           <folding />
         </state>
       </provider>
