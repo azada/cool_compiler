@@ -4,6 +4,7 @@ import cool.symbol.Exeption;
 import cool.symbol.SymbolNode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
 /**
@@ -16,13 +17,15 @@ import java.util.HashSet;
 public class Program {
 
     public static ArrayList classes = new ArrayList();
-    public static HashSet<String> typeTable = new HashSet<String>() ;
+    public static HashMap<String,HashMap<String, String>> typeTable = new HashMap<String, HashMap<String, String>>() ;
     public static SymbolNode programSymbolNode = new SymbolNode();
     public static ArrayList<Exeption> errorList = new ArrayList<Exeption>();
     private static Program instance = new Program();
 
     private Program() {
-
+        typeTable.put("Int", null);
+        typeTable.put("String", null);
+        typeTable.put("Boolean", null);
     }
     public static Program getInstance(){
         return instance;
@@ -47,6 +50,11 @@ public class Program {
         for (int i = 0 ; i< errorList.size() ;i++){
             errorList.get(i).pritnError();
         }
+    }
+    public static void clear(){
+        classes.clear();
+        typeTable.clear();
+        errorList.clear();
     }
 
 }

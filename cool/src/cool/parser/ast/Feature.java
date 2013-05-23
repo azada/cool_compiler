@@ -1,5 +1,7 @@
 package cool.parser.ast;
 
+import cool.symbol.SymbolNode;
+
 /**
  * Created with IntelliJ IDEA.
  * User: pedram
@@ -8,6 +10,6 @@ package cool.parser.ast;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Feature extends Node {
-
+       SymbolNode symbolNode;
 
 }

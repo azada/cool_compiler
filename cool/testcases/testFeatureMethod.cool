@@ -1,0 +1,7 @@
+class A2I(){
+      def get_length() : Int = dd;
+
+}
+class A2I(){
+    def get_length() : Int = dd;
+}

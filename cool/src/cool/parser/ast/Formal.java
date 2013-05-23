@@ -13,6 +13,7 @@ import cool.symbol.SymbolTable;
 public class Formal extends Node{
     String id;
     String type;
+    SymbolNode symbolNode;
 
     public Formal(String id, String type) {
         this.id = id;

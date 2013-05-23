@@ -1,6 +1,8 @@
 package cool.parser.ast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import cool.symbol.*;
 /**
  * Created with IntelliJ IDEA.
@@ -24,6 +26,7 @@ public class ClassNode extends Node {
         this.varFormals = varFormals;
         this.featureList = featureList;
         symbolNode = new SymbolNode() ;
+        symbolNode.type  = new String(type);
         for (int i=0 ; i<varFormals.size(); i++){
             SymbolItem temp = new SymbolItem(((Var)varFormals.get(i)).id, ((Var)varFormals.get(i)).type, false);
             symbolNode.insert(temp);
@@ -32,13 +35,15 @@ public class ClassNode extends Node {
 
     @Override
     public boolean check(SymbolNode pTable) {
-        if (Program.getInstance().typeTable.contains(type)){
-            Program.addError(new Exeption("Type "+ type + " has already been declared"));
-            return false;
-        }
-        Program.getInstance().typeTable.add(type);
         boolean result = true;
+        if (Program.getInstance().typeTable.containsKey(type)){
+            Program.addError(new Exeption("Type "+ type + " has already been declared"));
+            result =  false;
+        }
+        Program.getInstance().typeTable.put(type, new HashMap<String, String>());
+
         for (int i=0 ; i < this.featureList.size(); i++){
+            ((Feature)(this.featureList.get(i))).symbolNode.setParent(this.symbolNode);
              result = result && ((Feature)this.featureList.get(i)).check(this.symbolNode);
         }
         return result;

@@ -13,6 +13,7 @@ import java.util.HashMap;
 public class SymbolNode {
     SymbolNode parent = null;
     ArrayList<SymbolNode> childList ;
+    public String type;
     public HashMap<String, SymbolItem> symbolTable;
 
     public SymbolNode(SymbolNode parent) {
@@ -30,13 +31,12 @@ public class SymbolNode {
             return this.symbolTable.get(id);
         }
         else{
-            if (this.parent == null){
-                return null;
-            }
             return parent.lookup(id);
         }
     }
-
+    public void setParent(SymbolNode sn){
+        this.parent = sn;
+    }
     public void insert(SymbolItem symbolItem){
         symbolTable.put(symbolItem.id, symbolItem);
     }

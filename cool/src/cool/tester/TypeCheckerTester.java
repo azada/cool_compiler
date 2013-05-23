@@ -20,17 +20,34 @@ public class TypeCheckerTester extends TestCase{
     public void testClassNode() {
         System.out.println("TypeCheckerTester.testClassNode");
         try {
-            FileInputStream file = new FileInputStream("testcases/TestClassNode.cool");
+            FileInputStream file = new FileInputStream("testcases/testClassNode.cool");
             MyCoolParser parser = new MyCoolParser(file);
             parser.parse2();
 
-            if (!parser.checker()){
-                Program.printErrors();
-            }
-            else {
-                Program.printErrors();
-            }
+            parser.checker();
+            Program.printErrors();
+            Program.clear();
 
+            Assert.assertTrue(true);
+
+        } catch (FileNotFoundException e) {
+            Assert.assertTrue(false);
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (Parser.Exception e ) {
+            System.out.println("e = " + e);
+            Assert.assertTrue(false);
+        }
+    }
+    public void testFeatureMehtod() {
+        System.out.println("TypeCheckerTester.testFeatureMethod");
+        try {
+            FileInputStream file = new FileInputStream("testcases/testFeatureMethod.cool");
+            MyCoolParser parser = new MyCoolParser(file);
+            parser.parse2();
+
+            parser.checker();
+            Program.printErrors();
+            Program.clear();
 
             Assert.assertTrue(true);
 
