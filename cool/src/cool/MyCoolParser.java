@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import cool.parser.Terminals;
 import cool.parser.ast.ClassNode;
 import cool.parser.ast.JSONLogger;
+import cool.parser.ast.Program;
 
 
 /**
@@ -44,7 +45,7 @@ public class MyCoolParser {
         SimpleParser parser = new SimpleParser();
         try {
             ArrayList classList = (ArrayList) parser.parse(myCoolScanner);
-
+            Program.setClasses(classList);
 
             JSONLogger.openBrace();
             JSONLogger.openListAttribute("program");
@@ -69,6 +70,13 @@ public class MyCoolParser {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
+    }
+    public boolean checker(){
+        boolean result = true;
+        for(int i = 0 ; i< Program.getClasses().size(); i++){
+            result = result && (((ClassNode)Program.getClasses().get(i)).check(Program.getSymbolNode()));
+        }
+        return result;
     }
 
     /*public void parse() {

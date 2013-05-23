@@ -13,4 +13,7 @@ public class Exeption {
     public Exeption(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+    public void pritnError(){
+        System.out.println(errorMsg);
+    }
 }

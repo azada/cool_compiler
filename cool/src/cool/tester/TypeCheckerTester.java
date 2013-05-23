@@ -2,6 +2,7 @@ package cool.tester;
 
 import beaver.Parser;
 import cool.MyCoolParser;
+import cool.parser.ast.Program;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
@@ -22,6 +23,15 @@ public class TypeCheckerTester extends TestCase{
             FileInputStream file = new FileInputStream("testcases/TestClassNode.cool");
             MyCoolParser parser = new MyCoolParser(file);
             parser.parse2();
+
+            if (!parser.checker()){
+                Program.printErrors();
+            }
+            else {
+                Program.printErrors();
+            }
+
+
             Assert.assertTrue(true);
 
         } catch (FileNotFoundException e) {

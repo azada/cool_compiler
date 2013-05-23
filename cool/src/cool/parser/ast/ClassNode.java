@@ -32,11 +32,11 @@ public class ClassNode extends Node {
 
     @Override
     public boolean check(SymbolNode pTable) {
-        if (TypeSingleton.getInstance().typeTable.contains(type)){
-            ErrorSingleton.addError(new Exeption("Type "+ type + "has already been declared"));
+        if (Program.getInstance().typeTable.contains(type)){
+            Program.addError(new Exeption("Type "+ type + " has already been declared"));
             return false;
         }
-        TypeSingleton.getInstance().typeTable.add(type);
+        Program.getInstance().typeTable.add(type);
         boolean result = true;
         for (int i=0 ; i < this.featureList.size(); i++){
              result = result && ((Feature)this.featureList.get(i)).check(this.symbolNode);
