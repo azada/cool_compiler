@@ -15,11 +15,26 @@ import java.util.ArrayList;
 public class Block extends Expr {
 
     ArrayList exprList;
+    SymbolNode symbolNode ;
 
     public Block(ArrayList exprList, Expr end) {
         this.exprList = exprList;
         this.exprList.add(end);
         this.expType = end.expType;
+        symbolNode = new SymbolNode();
+    }
+
+
+    @Override
+    public boolean check(SymbolNode pTable) {
+        //To change body of implemented methods use File | Settings | File Templates.
+        boolean result = true;
+        this.symbolNode.setParent(pTable);
+        for (int i = 0; i < exprList.size(); i++) {
+            boolean el = ((Expr)(exprList.get(i))).check(symbolNode);
+            result = result && el;
+        }
+        return result;
     }
 
 
@@ -38,9 +53,5 @@ public class Block extends Expr {
         JSONLogger.closeListAttribute();
         //To change body of implemented methods use File | Settings | File Templates.
     }
-    @Override
-    public boolean check(SymbolNode pTable) {
-        //To change body of implemented methods use File | Settings | File Templates.
-        return false;
-    }
+
 }
