@@ -31,6 +31,8 @@ public class SymbolNode {
             return this.symbolTable.get(id);
         }
         else{
+            if (parent == null)
+                return null;
             return parent.lookup(id);
         }
     }

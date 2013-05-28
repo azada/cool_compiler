@@ -52,7 +52,7 @@ public class ClassNode extends Node {
             boolean vf = ((Var)this.varFormals.get(i)).check(this.symbolNode);
             result = result && vf;
         }
-        this.symbolNode.setParent(pTable);
+        this.symbolNode.setParent(null);
 
         for (int i=0 ; i < this.featureList.size(); i++){
              boolean res = ((Feature)this.featureList.get(i)).check(this.symbolNode);
