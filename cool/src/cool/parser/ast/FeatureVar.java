@@ -1,5 +1,7 @@
 package cool.parser.ast;
 
+import cool.symbol.Exeption;
+import cool.symbol.SymbolItem;
 import cool.symbol.SymbolNode;
 import cool.symbol.SymbolTable;
 
@@ -31,8 +33,25 @@ public class FeatureVar extends Feature {
     }
     @Override
     public boolean check(SymbolNode pTable) {
+        boolean result = true;
+        if (!Program.typeTableContains(type)){
+            Program.addError(new Exeption("Type " + type + " has not been defined",this));
+            result = false;
+        }
+        else {
+            SymbolItem temp = new SymbolItem(id, type, false);
+            pTable.insert(temp);
+        }
+        boolean ex = expr.check(pTable);
+        ///////////////////////here we check if we return the correct type in methods ///////////////////////////////
+        if(!expr.expType.equals(type)){
+            Program.addError(new Exeption("the type of this expression is not " + type ,this));
+            result = result && false;
+        }
+        ////////////////////////////////////////////////////////////////
+        result = result &&  ex;
         //To change body of implemented methods use File | Settings | File Templates.
-        return false;
+        return result;
     }
     @Override
     public void accept() {

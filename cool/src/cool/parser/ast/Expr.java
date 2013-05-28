@@ -10,11 +10,12 @@ import beaver.Symbol;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Expr extends Node {
-    public static final int BOOLEAN_TYPE = 1;
-    public static final int INTEGER_TYPE = 2;
-    public static final int STRING_TYPE = 3;
+    public static final String BOOLEAN_TYPE = "Boolean";
+    public static final String INTEGER_TYPE = "Int";
+    public static final String STRING_TYPE = "String";
+    public static final String OBJECT_TYPE = "Object";
 
-    int expType;
+    String expType;
 
 }
 

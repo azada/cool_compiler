@@ -47,6 +47,14 @@ public class FeatureMethod extends Feature {
             result = result &&fml;
         }
         boolean express =  expr.check(this.symbolNode);
+
+        ///////////////////////here we check if we return the correct type in methods ///////////////////////////////
+//        System.out.println("expression type is" + expr.expType);
+        if(!expr.expType.equals(type)){
+            Program.addError(new Exeption("the type of this expression is not " + type ,this));
+            result = false;
+        }
+        ////////////////////////////////////////////////////////////////
         result = result &&  express;
         return result;
     }
