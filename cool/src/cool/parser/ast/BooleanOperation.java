@@ -14,4 +14,5 @@ public class BooleanOperation extends BinaryOperation{
     public BooleanOperation(ArrayList operands) {
         super(operands);
     }
+    int a;
 }
