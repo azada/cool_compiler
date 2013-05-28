@@ -105,4 +105,26 @@ public class TypeCheckerTester extends TestCase{
             Assert.assertTrue(false);
         }
     }
+    public void testEverything() {
+        System.out.println("TypeCheckerTester.testEverything");
+        try {
+            FileInputStream file = new FileInputStream("examples/gfx.cool");
+            MyCoolParser parser = new MyCoolParser(file);
+            parser.parse2();
+
+            parser.checker();
+            Program.printErrors();
+            Program.clear();
+            System.out.println("**************************************************************************************");
+
+            Assert.assertTrue(true);
+
+        } catch (FileNotFoundException e) {
+            Assert.assertTrue(false);
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (Parser.Exception e ) {
+            System.out.println("e = " + e);
+            Assert.assertTrue(false);
+        }
+    }
 }

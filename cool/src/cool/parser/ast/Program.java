@@ -17,7 +17,8 @@ import java.util.HashSet;
 public class Program {
 
     private static ArrayList classes = new ArrayList();
-    private static HashMap<String,HashMap<String, String>> typeTable = new HashMap<String, HashMap<String, String>>() ;
+    ///////////////////////type /////////// function name, it's return type
+    private static HashMap<String,HashMap<String,FeatureMethod> > typeTable = new HashMap<String,HashMap<String,FeatureMethod> >() ;
     public static SymbolNode programSymbolNode = new SymbolNode();
     private static ArrayList<Exeption> errorList = new ArrayList<Exeption>();
     private static Program instance = new Program();
@@ -39,10 +40,10 @@ public class Program {
     public static boolean typeTableContains(String a){
         return instance.typeTable.containsKey(a);
     }
-    public static HashMap<String, String> getTableRow(String a){
+    public static HashMap<String,FeatureMethod>  getTableRow(String a){
         return instance.typeTable.get(a);
     }
-    public static void typeTablePut(String a , HashMap<String, String> b){
+    public static void typeTablePut(String a , HashMap<String,FeatureMethod> b){
         instance.typeTable.put(a, b);
     }
 

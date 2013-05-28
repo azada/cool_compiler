@@ -23,8 +23,14 @@ public class Match extends Expr {
 
     @Override
     public boolean check(SymbolNode pTable) {
+        boolean result = true;
+        boolean ex = primary.check(pTable);
+        for (int i=0 ; i<cases.size(); i++){
+            boolean vf = ((Case)this.cases.get(i)).check(pTable);
+            result = result && vf;
+        }
         //To change body of implemented methods use File | Settings | File Templates.
-        return false;
+        return result && ex;
     }
 
     @Override

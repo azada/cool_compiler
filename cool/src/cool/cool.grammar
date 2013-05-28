@@ -81,13 +81,13 @@ rexpr   =
 
 
 rel =
-    rel.r LE equiv.e                                                    {:  ArrayList operands = new ArrayList(); operands.add(r); operands.add(e); return new LessOrEqual(operands); :}
-    | rel.r LT equiv.e                                                  {:  ArrayList operands = new ArrayList(); operands.add(r); operands.add(e); return new LessThan(operands); :}
+    rel.r LE equiv.e                                                    {: ArrayList operands = new ArrayList(); operands.add(r); operands.add(e); return new LessOrEqual(operands); :}
+    | rel.r LT equiv.e                                                  {: ArrayList operands = new ArrayList(); operands.add(r); operands.add(e); return new LessThan(operands); :}
     | equiv.e                                                           {: return e; :}
     ;
 
 equiv =
-     equiv.e EQUALS sum.s                                               {:  ArrayList operands = new ArrayList(); operands.add(e); operands.add(s); return new Equal(operands); :}
+     equiv.e EQUALS sum.s                                               {: ArrayList operands = new ArrayList(); operands.add(e); operands.add(s); return new Equal(operands); :}
      | sum.s                                                            {: return s; :}
      ;
 
@@ -122,7 +122,7 @@ primary		=
 		|   MINUS primary.p                                             {: ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryRealOperation(operands); :}
 		|	lexpr.e                                                     {: return e; :}
 		|   NOT primary.p                                               {: ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryBooleanOperation(operands); :}
-		|   primary DOT ID actuals.a                                    {: return new PrimaryActual(a); :}
+		|   primary.p DOT ID.id actuals.a                               {: Primary pp = (Primary)p.value ; return new PrimaryActual(a,pp, id); :}
 		|   NEW TYPE.t actuals.s                                        {: return new Instance(t,s); :}
 		;
 
@@ -158,7 +158,7 @@ cases =
 
 case_block =
     CASE ID.id COLON TYPE.t ARROW block.b case_block.cb                 {: cb.add(new Case(id,t,b));return new Symbol(cb);  :}
-    | CASE NULL ARROW block.b case_block.cb                               {: cb.add(new Case(b));return new Symbol(cb); :}
+    | CASE NULL ARROW block.b case_block.cb                             {: cb.add(new Case(b));return new Symbol(cb); :}
     | empty                                                             {: return new Symbol(new ArrayList()); :}
     ;
 
@@ -251,7 +251,7 @@ exp_list =
 /*************************************************************************************************************************************/
 
 classbody =
-    LBRACE feature_list.fl RBRACE                                             {: return new Symbol(fl); :}
+    LBRACE feature_list.fl RBRACE                                           {: return new Symbol(fl); :}
     ;
 
 /*************************************************************************************************************************************/

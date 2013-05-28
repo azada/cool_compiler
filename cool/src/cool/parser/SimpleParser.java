@@ -132,13 +132,13 @@ public class SimpleParser extends Parser {
 			{
 					final Symbol r = _symbols[offset + 1];
 					final Symbol e = _symbols[offset + 3];
-					  ArrayList operands = new ArrayList(); operands.add(r); operands.add(e); return new LessOrEqual(operands);
+					 ArrayList operands = new ArrayList(); operands.add(r); operands.add(e); return new LessOrEqual(operands);
 			}
 			case 11: // rel = rel.r LT equiv.e
 			{
 					final Symbol r = _symbols[offset + 1];
 					final Symbol e = _symbols[offset + 3];
-					  ArrayList operands = new ArrayList(); operands.add(r); operands.add(e); return new LessThan(operands);
+					 ArrayList operands = new ArrayList(); operands.add(r); operands.add(e); return new LessThan(operands);
 			}
 			case 12: // rel = equiv.e
 			{
@@ -149,7 +149,7 @@ public class SimpleParser extends Parser {
 			{
 					final Symbol e = _symbols[offset + 1];
 					final Symbol s = _symbols[offset + 3];
-					  ArrayList operands = new ArrayList(); operands.add(e); operands.add(s); return new Equal(operands);
+					 ArrayList operands = new ArrayList(); operands.add(e); operands.add(s); return new Equal(operands);
 			}
 			case 14: // equiv = sum.s
 			{
@@ -243,11 +243,14 @@ public class SimpleParser extends Parser {
 					final Symbol p = _symbols[offset + 2];
 					 ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryBooleanOperation(operands);
 			}
-			case 31: // primary = primary DOT ID actuals.a
+			case 31: // primary = primary.p DOT ID.id actuals.a
 			{
+					final Symbol p = _symbols[offset + 1];
+					final Symbol _symbol_id = _symbols[offset + 3];
+					final String id = (String) _symbol_id.value;
 					final Symbol _symbol_a = _symbols[offset + 4];
 					final ArrayList a = (ArrayList) _symbol_a.value;
-					 return new PrimaryActual(a);
+					 Primary pp = (Primary)p.value ; return new PrimaryActual(a,pp, id);
 			}
 			case 32: // primary = NEW TYPE.t actuals.s
 			{

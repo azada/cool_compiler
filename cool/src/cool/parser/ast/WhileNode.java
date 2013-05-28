@@ -23,8 +23,12 @@ public class WhileNode extends Expr
 
     @Override
     public boolean check(SymbolNode pTable) {
+        boolean result = true;
+        boolean co = condition.check(pTable);
+        boolean ma = mainExpr.check(pTable);
+        return result && co & ma ;
+
         //To change body of implemented methods use File | Settings | File Templates.
-        return false;
     }
 
     @Override

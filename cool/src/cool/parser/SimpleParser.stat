@@ -506,21 +506,21 @@
 64:	ID: SHIFT; goto 65
 65:	LPAREN: SHIFT; goto 44
 	actuals: SHIFT; goto 66
-66:	RPAREN: REDUCE primary = primary DOT ID actuals.a
-	RBRACE: REDUCE primary = primary DOT ID actuals.a
-	MINUS: REDUCE primary = primary DOT ID actuals.a
-	COMMA: REDUCE primary = primary DOT ID actuals.a
-	SEMI: REDUCE primary = primary DOT ID actuals.a
-	CASE: REDUCE primary = primary DOT ID actuals.a
-	ELSE: REDUCE primary = primary DOT ID actuals.a
-	LE: REDUCE primary = primary DOT ID actuals.a
-	LT: REDUCE primary = primary DOT ID actuals.a
-	EQUALS: REDUCE primary = primary DOT ID actuals.a
-	PLUS: REDUCE primary = primary DOT ID actuals.a
-	TIMES: REDUCE primary = primary DOT ID actuals.a
-	DIV: REDUCE primary = primary DOT ID actuals.a
-	DOT: REDUCE primary = primary DOT ID actuals.a
-	MATCH: REDUCE primary = primary DOT ID actuals.a
+66:	RPAREN: REDUCE primary = primary.p DOT ID.id actuals.a
+	RBRACE: REDUCE primary = primary.p DOT ID.id actuals.a
+	MINUS: REDUCE primary = primary.p DOT ID.id actuals.a
+	COMMA: REDUCE primary = primary.p DOT ID.id actuals.a
+	SEMI: REDUCE primary = primary.p DOT ID.id actuals.a
+	CASE: REDUCE primary = primary.p DOT ID.id actuals.a
+	ELSE: REDUCE primary = primary.p DOT ID.id actuals.a
+	LE: REDUCE primary = primary.p DOT ID.id actuals.a
+	LT: REDUCE primary = primary.p DOT ID.id actuals.a
+	EQUALS: REDUCE primary = primary.p DOT ID.id actuals.a
+	PLUS: REDUCE primary = primary.p DOT ID.id actuals.a
+	TIMES: REDUCE primary = primary.p DOT ID.id actuals.a
+	DIV: REDUCE primary = primary.p DOT ID.id actuals.a
+	DOT: REDUCE primary = primary.p DOT ID.id actuals.a
+	MATCH: REDUCE primary = primary.p DOT ID.id actuals.a
 67:	MINUS: REDUCE empty = 
 	LBRACE: REDUCE empty = 
 	LPAREN: REDUCE empty = 

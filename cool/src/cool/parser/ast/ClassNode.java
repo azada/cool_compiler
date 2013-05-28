@@ -40,7 +40,7 @@ public class ClassNode extends Node {
             result = false;
         }
         else {
-            Program.getInstance().typeTablePut(type, new HashMap<String, String>());
+            Program.getInstance().typeTablePut(type, new HashMap<String, FeatureMethod>());
         }
         return result;
     }

@@ -34,14 +34,20 @@ public class FeatureMethod extends Feature {
 
         if ( Program.typeTableContains(pTable.type))
         {
-            if (Program.getTableRow(pTable.type).containsKey(this.id)){
+            if (Program.getInstance().getTableRow(pTable.type).containsKey(id)){
                 Program.addError(new Exeption("method "+ this.id + " has duplicate definitions " , this));
                 result = false;
             }
+            else{
+                Program.getInstance().getTableRow(pTable.type).put(id, this);
+            }
         }
+        else{
+            Program.addError(new Exeption("the scope for this class has not been defined",this));
+        }
+
         //we set the parent node to be the pTable
         this.symbolNode.setParent(pTable);
-        Program.getInstance().getTableRow(pTable.type).put(id, type);
         for (int i = 0 ; i< formals.size() ; i++){
             boolean fml = ((Formal)formals.get(i)).check(this.symbolNode);
             result = result &&fml;
