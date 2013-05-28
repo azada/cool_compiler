@@ -46,7 +46,7 @@ public class FeatureVar extends Feature {
         ///////////////////////here we check if we return the correct type in methods ///////////////////////////////
         if(!expr.expType.equals(type)){
             Program.addError(new Exeption("the type of this expression is not " + type ,this));
-            result = result && false;
+            result = false;
         }
         ////////////////////////////////////////////////////////////////
         result = result &&  ex;
