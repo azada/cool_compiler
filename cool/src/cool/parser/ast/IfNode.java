@@ -1,5 +1,6 @@
 package cool.parser.ast;
 
+import cool.symbol.Exeption;
 import cool.symbol.SymbolNode;
 import cool.symbol.SymbolTable;
 
@@ -24,6 +25,22 @@ public class IfNode extends Expr {
     }
     @Override
     public boolean check(SymbolNode pTable) {
+        boolean result = true;
+        boolean co = condition.check(pTable);
+        boolean ex = elseExpr.check(pTable);
+        boolean mx = mainExpr.check(pTable);
+        result = result && co && ex && mx ;
+
+        // we should check if the main expr and the elseexp are the same type
+        if (!elseExpr.expType.equals(mainExpr.expType)){
+            Program.addError(new Exeption("else expression's and main expression's type are not the same",this));
+            result = false;
+        }
+        else{
+            this.expType = mainExpr.expType;
+        }
+
+
         //To change body of implemented methods use File | Settings | File Templates.
         return false;
     }

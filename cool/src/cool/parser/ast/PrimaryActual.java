@@ -44,11 +44,21 @@ public class PrimaryActual extends Expr {
             boolean ac = ((Expr)this.actuals.get(i)).check(pTable);
             result = result && ac;
         }
+        FeatureMethod temp = Program.getInstance().getTableRow(primary.expType).get(id);
+
+        // we should make sure we have the same number of actuals and formals in method declaration
+        if (temp.formals.size() != actuals.size()){
+            Program.addError(new Exeption(temp.formals.size()+ " number of argmument needed and " + actuals + " are given",this));
+            result = false;
+        }
         //and make sure we have the same type in actuals as we had in feature methods.
-
-
-
-
+        for (int i = 0 ; i< temp.formals.size() ; i++){
+            if (!((Expr)actuals.get(i)).expType.equals(((Formal)(temp.formals.get(i))).type)){
+                Program.addError(new Exeption("type of actuals doesn't match argument list defined in the method",this));
+                result = false;
+            }
+        }
+        this.expType = temp.type;
         //To change body of implemented methods use File | Settings | File Templates.
         return result;
     }
