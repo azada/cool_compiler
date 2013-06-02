@@ -21,7 +21,6 @@ public class FeatureVar extends Feature {
     public FeatureVar(String id) {
         this.id = id;
         isNative = true;
-
     }
 
 

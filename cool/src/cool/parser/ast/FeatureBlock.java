@@ -25,7 +25,7 @@ public class FeatureBlock extends Feature {
         //To change body of implemented methods use File | Settings | File Templates.
         boolean result = true;
         result = result && block.check(pTable);
-        return false;
+        return result;
     }
 
     @Override

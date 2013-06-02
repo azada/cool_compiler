@@ -29,7 +29,7 @@ public class IfNode extends Expr {
         boolean co = condition.check(pTable);
         boolean ex = elseExpr.check(pTable);
         boolean mx = mainExpr.check(pTable);
-        result = result && co && ex && mx ;
+        result = result && co && ex && mx;
 
         // we should check if the main expr and the elseexp are the same type
         if (!elseExpr.expType.equals(mainExpr.expType)){
@@ -42,7 +42,7 @@ public class IfNode extends Expr {
 
 
         //To change body of implemented methods use File | Settings | File Templates.
-        return false;
+        return result;
     }
     @Override
     public void accept( ) {

@@ -10,15 +10,6 @@ import cool.symbol.SymbolTable;
  * Time: 10:50 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Operand extends Expr {
+public abstract class Operand extends Expr {
 
-    @Override
-    public boolean check(SymbolNode pTable) {
-        //To change body of implemented methods use File | Settings | File Templates.
-        return false;
-    }
-    @Override
-    public void accept() {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
 }
