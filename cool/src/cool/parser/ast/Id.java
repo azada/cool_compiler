@@ -1,5 +1,7 @@
 package cool.parser.ast;
 
+import cool.symbol.Exeption;
+import cool.symbol.SymbolItem;
 import cool.symbol.SymbolNode;
 import cool.symbol.SymbolTable;
 
@@ -18,8 +20,19 @@ public class Id extends Primary {
     }
     @Override
     public boolean check(SymbolNode pTable) {
+        boolean result;
+        SymbolItem temp = pTable.lookup(name);
+        if (temp != null){
+            this.expType = temp.getType();
+            result = true;
+        }
+        else {
+            Program.addError(new Exeption("the variable " + name + " has not been declared ",this));
+            result = false;
+        }
+        return result;
         //To change body of implemented methods use File | Settings | File Templates.
-        return false;
+
     }
 
     @Override

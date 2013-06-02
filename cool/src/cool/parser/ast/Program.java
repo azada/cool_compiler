@@ -5,7 +5,6 @@ import cool.symbol.SymbolNode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,7 +17,9 @@ public class Program {
 
     private static ArrayList classes = new ArrayList();
     ///////////////////////type /////////// function name, it's return type
-    private static HashMap<String,HashMap<String,FeatureMethod> > typeTable = new HashMap<String,HashMap<String,FeatureMethod> >() ;
+    private static HashMap<String,HashMap<String,FeatureMethod> > typeAndMethodTable = new HashMap<String,HashMap<String,FeatureMethod> >() ;
+    // in order to store the class's object as a pair to the classe's name, we need another hashmap.
+    public static HashMap<String , ClassNode> typeClassTable = new HashMap<String, ClassNode>();
     public static SymbolNode programSymbolNode = new SymbolNode();
     private static ArrayList<Exeption> errorList = new ArrayList<Exeption>();
     private static Program instance = new Program();
@@ -27,10 +28,10 @@ public class Program {
 
     }
     public static Program getInstance(){
-        if (instance.typeTable.isEmpty()){
-            instance.typeTable.put("Int", null);
-            instance.typeTable.put("String", null);
-            instance.typeTable.put("Boolean", null);
+        if (instance.typeAndMethodTable.isEmpty()){
+            instance.typeAndMethodTable.put("Int", null);
+            instance.typeAndMethodTable.put("String", null);
+            instance.typeAndMethodTable.put("Boolean", null);
         }
         return instance;
     }
@@ -38,13 +39,13 @@ public class Program {
         return classes;
     }
     public static boolean typeTableContains(String a){
-        return instance.typeTable.containsKey(a);
+        return instance.typeAndMethodTable.containsKey(a);
     }
     public static HashMap<String,FeatureMethod>  getTableRow(String a){
-        return instance.typeTable.get(a);
+        return instance.typeAndMethodTable.get(a);
     }
     public static void typeTablePut(String a , HashMap<String,FeatureMethod> b){
-        instance.typeTable.put(a, b);
+        instance.typeAndMethodTable.put(a, b);
     }
 
     public static void setClasses(ArrayList cls){
@@ -67,7 +68,7 @@ public class Program {
     }
     public static void clear(){
         classes.clear();
-        typeTable.clear();
+        typeAndMethodTable.clear();
         errorList.clear();
     }
 

@@ -14,6 +14,7 @@ public abstract class Expr extends Node {
     public static final String INTEGER_TYPE = "Int";
     public static final String STRING_TYPE = "String";
     public static final String OBJECT_TYPE = "Object";
+    public static final String UNIT_TYPE = "Unit";
 
     String expType;
 

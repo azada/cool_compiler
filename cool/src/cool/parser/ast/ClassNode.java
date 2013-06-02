@@ -41,6 +41,7 @@ public class ClassNode extends Node {
         }
         else {
             Program.getInstance().typeTablePut(type, new HashMap<String, FeatureMethod>());
+            Program.getInstance().typeClassTable.put(type,this);
         }
         return result;
     }
