@@ -19,6 +19,7 @@ public class Instance extends Primary {
     public Instance(String type, ArrayList actuals) {
         this.type = type;
         this.actuals = actuals;
+        this.expType = type;
     }
 
 //    public Instance(String type) {
@@ -33,7 +34,7 @@ public class Instance extends Primary {
         if (Program.getInstance().typeTableContains(type)){
             // now that we know such class exists, we check the arguments. we check the actuals
             for (int i=0 ; i<actuals.size(); i++){
-                boolean ac = ((Expr)this.actuals.get(i)).check(pTable);
+                boolean ac = ((Expr)actuals.get(i)).check(pTable);
                 result = result && ac;
             }
             // if there is a  problem with the actuals, we return flase and do not check them with varformals.

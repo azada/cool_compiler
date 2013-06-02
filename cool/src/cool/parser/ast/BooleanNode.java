@@ -15,6 +15,7 @@ public class BooleanNode extends Primary {
 
     public BooleanNode( Boolean value) {
         this.value = value;
+        this.expType = BOOLEAN_TYPE;
     }
 
     @Override
@@ -27,6 +28,6 @@ public class BooleanNode extends Primary {
     @Override
     public boolean check(SymbolNode pTable) {
         //To change body of implemented methods use File | Settings | File Templates.
-        return false;
+        return true;
     }
 }

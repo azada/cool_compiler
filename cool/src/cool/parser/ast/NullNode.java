@@ -13,7 +13,7 @@ import cool.symbol.SymbolTable;
 public class NullNode extends Primary {
     public boolean check(SymbolNode pTable) {
         //To change body of implemented methods use File | Settings | File Templates.
-        return false;
+        return true;
     }
     @Override
     public void accept( ) {
