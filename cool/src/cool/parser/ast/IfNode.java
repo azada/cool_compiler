@@ -36,10 +36,7 @@ public class IfNode extends Expr {
             Program.addError(new Exeption("else expression's and main expression's type are not the same",this));
             result = false;
         }
-        else{
-            this.expType = mainExpr.expType;
-        }
-
+        this.expType = mainExpr.expType;
 
         //To change body of implemented methods use File | Settings | File Templates.
         return result;

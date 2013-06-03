@@ -46,7 +46,7 @@ public class PrimaryActual extends Expr {
         }
         FeatureMethod temp = Program.getInstance().getTableRow(primary.expType).get(id);
 
-        // we should make sure we have the same number of actuals and formals in method declaration
+        // we should make sure we have the same number of actuals and formals in
         if (temp.formals.size() != actuals.size()){
             Program.addError(new Exeption(temp.formals.size()+ " number of argmument needed and " + actuals + " are given",this));
             result = false;
@@ -58,7 +58,7 @@ public class PrimaryActual extends Expr {
                 result = false;
             }
         }
-        this.expType = temp.type;
+
         //To change body of implemented methods use File | Settings | File Templates.
         return result;
     }

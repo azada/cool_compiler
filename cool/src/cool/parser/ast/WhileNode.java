@@ -19,6 +19,7 @@ public class WhileNode extends Expr
     public WhileNode(Expr condition, Expr mainExpr) {
         this.condition = condition;
         this.mainExpr = mainExpr;
+        expType = UNIT_TYPE;
     }
 
     @Override

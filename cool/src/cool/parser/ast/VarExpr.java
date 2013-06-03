@@ -22,7 +22,7 @@ public class VarExpr extends Expr {
         this.id = id;
         this.type = type;
         this.expr = expr;
-        this.expType = "Unit";
+        this.expType = UNIT_TYPE;
     }
 
     @Override

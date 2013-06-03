@@ -12,55 +12,55 @@ import cool.parser.ast.*;
 public class SimpleParser extends Parser {
 
 	static final ParsingTables PARSING_TABLES = new ParsingTables(
-		"U9pjc0UKLSKPn$$tljstiXhK1G4BiWWgAWjXLL1GM8eKDKP9x8c9FHOIaLWIOpIsgB7492O" +
-		"nzfw6W295fIWMK74HL1ICYHfBD9eeMB1a$4sxx#xk0nQE9yTpvCtvVss#RxwPR#QzU#T9nG" +
-		"lC$KsRYhefIECqI7rC8rA5AlLxVIVpgTPm3KDw8Ml6KlLKqUkwZBX6ymdIDKIdn4RF$n7xB" +
-		"VXBiQdW#7XpRz2lrNek#YNTh0akR$Hj9FO8RMcUZ4rj7B$Rp0#wpxi4wHgDD9zQAVHih0te" +
-		"UL9Z6QLAGtMGQdISZj9tjQ6#eZ4wLSUgXvcl7#hx#e5EOlK$LH$jhbhLcmMnQMD7rrVRO9d" +
-		"1AEtCFTWsr4Rm#pBFSJgPwYqmpsUjqLET5$HxT14HqwraPfZfQXyzYJs5sEVDts9JBqTxCu" +
-		"QtJDU1H4vpqYPc6ZMAlhP6Ly6NPcsMfpecwDDq1#ZWf74waqp1K#CrLeV1X#feQcIhCr7xw" +
-		"zPO7NLiLfqpN7N#4PikTNGBPkdrMvZbRAVDrc6wH9qotqPzMrsXvxlzQbGtROrlOz3#52Kp" +
-		"KvkPoMPcqDw8ZLbQVfUk3$gHkb4Nc8b8FpSJjPssppp7cZlC90rrb1MPnxM3TivMr3Eko4m" +
-		"mZsb7Cy6kI7kPP$LBtGRzjMutpz8UrM3pk9Dewfb9GxI7zZIF1VqvCzSydD7djBU#PXwraj" +
-		"FsYPAPfw#RPyoyeBsPjKSyrJUzhc$e01siGv0EDK#PXJhSMHiqcbeiqWbKwZJcOYjskhcJq" +
-		"nJhTs4cNQnVw7BzAkYBTQMkWrwXtvd5yD$e3xhQIgvDoQI7gCiDPaxG6irKym3qGRZR7VrH" +
-		"Vyuo$2MJ$ggxD4cJWtQYcKhjfseAjP#gkzrfkbDJDIsh$VJiDDsZUpL3zxlJzA$OT9#ZCpK" +
-		"hwBFrWEReGQI7zB0UqQEPxsknQQwZy$HOq1$N4vglHgG5UbABz5Jc#tfiUiRHXNewM9wG#s" +
-		"1Jb49xDJPiZdhk9Q#LfD1UYGsRevvxoMibARH$neRDKS#zvBMI5DhBiM5pr7ClUQqa8JT0I" +
-		"x$1yjHpBtcj98NsOcpO7FNSIruhISWDqB$7XirHpxtajP8KMgFJ0lNSIruhIVaUVh$iPwYZ" +
-		"ziJvJpnnoavSzBFVzY#3N$pORzXRiL4rHpttajTA4d93gwkQp$Bls1Z5KS#zvBMIXDnG#Xt" +
-		"4ugZdNl9QINA$Wsiph$$6nYYEUkubhsN#0$KJyv$Ow77KSozvhOd$sx7HuwZdI66spkPdY$" +
-		"ygzdHrgrhdLzwli$RZtUGi$KZdwdlQLlrqZddNlAiVEofFFVUI##m6wimxvXtyB9Mdddif#" +
-		"9N6LnX$ypAs4JdRfi7MtOrGieyAzctAn7#rZAslUS#ynunoDF3#PRptDSlCClfpDF1otiUR" +
-		"vMOv$JaQU3dlt$86cBTrmTRKibKBoqxgPpum7p1gZlBPHMURZyt7M39gLfWLI1ar7vcFa39" +
-		"gFZGV8fMeVn$rcNOrxvltiMVKF6sUHYhHlFVFCcs04cug1NVRAVB#kvxgQEjh0#u7FUmx9R" +
-		"qrh6eNUkju5#x4lcx6TtX7LhPbBbOkjaqMsnd$BbXhN4rsoSMgHUm85xidke$jnczMqUMru" +
-		"nLN6RkxYxMPOjvkQAdBwsSLO#r82R4shZjojVeoVhNQijS3eDnbk2zrLpkrroRg45Q$0#Ty" +
-		"Yro#EfTlK3PNCOhFPqUniuxvV7n#hecBhI1hd6jrDbS$ezN7fbbiLHRRi9eQnTZwBBQEsAu" +
-		"krcUAiRiIKKTiKIEPaQtEjjmRXcNLgMrLTRREPcap9$JKW3f#HRRCCXKOjmrvXkDhyoJ4LM" +
-		"LvEcTv4aQj9DhcwTmYKoKpyfbs9cj2ivago52TosJjHMUtcOhK8SaojSbbAgB5J0LNmI9LY" +
-		"b7LdAoMKVNCg9AU6DKqLpNntSfKpvx3SgkAErKCgnf2JrVYQlYrJ6dRv5QLkaorvB6Pwl6h" +
-		"pZBjbcMoqTMCN5hLAAAsncAZQjtiOrINBCfMeXuQer9atsnKPyv9ALVNBAgMdkwSgRWg6zc" +
-		"5N4LiNLnaDsBQPf4RPP5Lh6Wz8fgUfirTDRR0qrUZZVj#TNLxREjNarMZ5BEDYzaKpSTqX7" +
-		"T2ga5knmpQbudfu69gcKduJXltKOq9dvOns8XnVIucyrmNytd559nMT9Ip4th3sK4APoUB2" +
-		"sUrTL7HpqLz2VoQL6dDTsDjzcBDitmnv$Mv#MTxLHDdw$nNkgUhMzKwlvNunNUJdhmbz59l" +
-		"RXLzMhUBsgCrVgNnqUBugxHfSBIv4KhseQsBpzcO7rgvq$N$zcvfQurbPJcQsTTORvffpRn" +
-		"B#o4jFjlVUEt$eDr0Bt20kw#9cxRm4wT4l6U8UxTq96WBhWBNWpt1hU76VWwu5qm4Im4tiw" +
-		"GJg01xeTy0tniSZ3n0Ad2xBmv1tmdvT3XouH8uj$G2laN6Bev6tmyS3aubpiQU0XQwIgem6" +
-		"Td#btC5$MUYpuLpuoiyJ#mXeAzKSQTK#GpyOVZ9y2NWDF0sVjmjauk1ZQy5h3kv3kmFnhWR" +
-		"hP8BmJNWPd0Bk0nS2QvbZ0tXKy5iy23vZYE66sWo7zd#bq6#P0AO1CQ3Pq4Fi10i0jpN4#g" +
-		"LKjDa85ZY$ZkGY15Zw4tc$1RzEz37cj8HW5gaPm3caEANpiCdXRyCFaNkmBewuZyBB4RkW#" +
-		"q2m5vMN0udJmNZLGm3jwDJuwBTezvW7t9IquIzIUO0zZ4v6Zm15e2J0EjApWMl0Sv8OjTh$" +
-		"qsS2Ny1FCUuXyBPVp7dmYXavfLmxqytWhyA1Y6JCxNphWAyXQQsbdN0rioUWxF09#0s#ZQ6" +
-		"izyfTzo4EIVJmKFWKcm5q0wq0KNG7gmFg7FAcbF6J3blwNQW7d2#KivSsW0uZobrIFS5x7d" +
-		"Q3t3#qzt1WM0muFobdD#Kiv0U13Y3AJL9Zm77WYC0zKfF17m$KcgKdW0kijyjZkb7bWTvQP" +
-		"J3zsuhRDH8XmPzHAxl#BnliDtOLAySszmds9Vdv4y3Fp$mArhw9oD2t#1StDLDVOh5OByrP" +
-		"niG#C5XVaU5TRwI6tjCiBsU6$kCSlDkjeRxScDS4iPVkd9$tZIKL9MnTyVUAyXpokHPjEfv" +
-		"wBoSV5DkJfDozcM1BsuQMnpTRAmLkVWxLfLtvVEfV2CttfIM$Sc4m9Sqops$cT#BQvF$YuB" +
-		"m6SqJAE5fbOB4oNrudx7Fzjuy#Nfps#tjv0BFueY4frp1FJLxmZqIdeU5W8JdOo70ocdWIJ" +
-		"FTyWhdDvAPZCHc$ptS7huJV4Vi7WbFnwA6kF#0ga0bI7WALu24TpQ#zUx$LlllNWeA8D4mX" +
-		"uBZk#8xaBw1oAFWe#3rzDdtjpq27mGVG9$zXxC$xulz6Qy$#VeJsnURnU201do7muS7lXjy" +
-		"hyy0QB7moG==");
+		"U9pjc0cuLLKLn$$dd7kVlgU02Y6Yy7WoYA0F0Pa7dqWu99IbcUPGJfMQXaCEbNDgP9P3IbP" +
+		"cfgbfYgZC2k8iuWCL0GKSSpR54L3R$VPmxZlttWCVNrQVtwTdVV#prbdxl$RQU#rzxZddIZ" +
+		"LDvkuACURZO7raFjAcu0Ph8IMEsgYLQSPQuKLrGM#7r$jMczN4hZR$iXQoeiHjeqrq3TRpG" +
+		"PxoMhkbbbbZrcW3S8Ira9Jvl8xNJkghpcPXaFbUwt3pIV2iGkuqgxIXirQLc0jLeuqPtKAD" +
+		"DytQHGUhe5W$q64Qez5cldwe7#jxwgaJT8oErOyqHOcvKnkPczL5$Sm2B$fMqDzHRR2Ersc" +
+		"Cw7ITeY5a#6lAfELwCXInbWLfzbe7QT$W#S1ye7r0QsiXANCPlHwdlbZBWpHxxMAzPv5Pf0" +
+		"Cvpx8MaZAN4tiYiSlDqrxqgs3DLDlWQHdpcRf0xL8cBUFrS#s2FbYDhZPzgCu1LRL9uuUvs" +
+		"ZphHUS4lHMZzPRdZGZw9oaJQRP2bY$fRyuQeqFKtdjRX3qmMvjhgfaTFAy52POwwA1W7Q#V" +
+		"aU5GtMWUKKE6#LgwsfmxXjN#itvHDQD9kiCiCO#O9NP6#Whs4dE7RZUtEoiZcgYRp5BztYm" +
+		"DdgLSTLLtRMkjCfbZxb8lUmxNhmTfzbgzMKjldMjkDRVeF7VUJls3jqbVXpkPaG$WFCbLO9" +
+		"9sDlEgwhITUTWirYYpE7WMS$LbxQ4zhLKcypGM$ZZF2Vo7pPFwQbMVHsjlTiCts0t#sjRkc" +
+		"zfV#rNLxk$cGNrRDtEsk#7L84y4$PXvF5Ysd$jrbQxY$5qTLMA#QbxsmZoyFaad1zyCNQRB" +
+		"E5#8RARDKYRoIf3Rl6PDpm#UwMQ6UIYSPsX2YVcAUScBVXtqBzcptZSD$WFXF5s$IPd8Fxp" +
+		"eeg0lrYN1DzLCqs$T#NBmkvI9lEX5LmJz1$qn#AQOgVgJEryD$f8oaHUywDfWtKSrlESw#F" +
+		"UOkPplDLCqANYREAU$YhS4VQic1#isJTDqtQaPkakpDRFb5zGyvqLpWfwbkuCrL$VgVjsZ1" +
+		"tIV7jH3mTl4#HalUZZeUNeaMFFrg9grG0lrc1xNefH9otWzmNttf9PeiTixJscfbbNjdQUr" +
+		"t3mgUzYzqonPsCFjkQrIgsndscCyoEvCVrJs7dY#zyy5BpriDT$qGWM3pbhP8tYRIbdiiRv" +
+		"Ptl12Bq5dhR8itjkK$WxY2JfhbKMaluF$oRZUza8lGMUjiYnlQwH#QjxomdNGMQkC$vRZ$z" +
+		"CBrq6Nh8hHue5VDThrczCNh9JLINk5TvRlwsnjeq4woxnZtj6fGDQoEck5Otjt7cvMcfLmL" +
+		"y9OwMnbhRBUXxlUjoppoVbsrHOvtYqpsNOlMPVcCBlb#7ha#7R8yGqqxvlt6RE3jxsbeJdi" +
+		"hvbtpRkqEtZRMxdi8yrxvZtQ7RpjhLpsbRnjPNtr#CezMrTvTjGWyw7va5uTlCqnM6SeuZq" +
+		"yiU$Al3zle0sTVoDjh5QkfP6Mnj3IdhV13gn1HzwrXyBlN8hTAJ1ggsAL6zir4ni7XZstn7" +
+		"QZfLzLR4zjgrwPsBJtNSloYfRwgjX6HXmHw#VQg85KgLPrwazrkgcr#oxQbBUSjch7Ut4ZR" +
+		"whT#EtRdVsrLIbVNUYrDRyfFfyVKM$U6xSdfZwJhxlBK3tFnh9v3iYqh7sUdoOsNRsOt#Ng" +
+		"COzWJYsn2U#jTbqRYRQrARZgLDQc9JvRczgGftjfBL9UghDvYcuDXX6Lha53LPvkz5tFdY#" +
+		"uF9rAcRg6J7QSsKm3O1Jfhr2MANAP2iIacUggCdM2aT1lCMIgTIiz65GoE$DRcJ3MB3DYB5" +
+		"jKCIF4Lh1ozEcAzSkifPM24rkFoj7RjdGzwhYkp5IBBw6$x9XibkfvTcNa2JNDCcqrE#UCt" +
+		"lQvSqMVzJchPCVUepJFobd6Y9#bjIAtxWNuKMQMbJkedhcaCPsG8Zkt2xzgM#V4D8IOEdPo" +
+		"IqpaOWf4DEJ4r9NorER635j7ddfgrH9JusBgYEcU4rEpZfYOc9gScDr2JB4qjdwk0ZQcI4o" +
+		"dd9Z1fHeqX9XwxXtxLTo9jMgTMxTDGaoNqYxioDMch66jMyLYJaowfWtOFgOpdXvmsjE#ER" +
+		"xipkr07nkpIrgvlLF7cDfLxPssG8R3xPq4NJJkS37TdLKHutoEsR8pGqmLC#tHCJy7lFJ8t" +
+		"ebSkLLpVhTgfk8ehLf5$Vz7MJwRu$glyQjsiUTNxlprcjCNh9nt3lkUrOTtzBxhisOQ7TPi" +
+		"dTootjk7tZC#6DutFC#RoJQgPEKoFvMF6M3dxRZ$DxlQjpwUjUMGLfpXFZgYRJdPxuzQzwK" +
+		"ZegH3mPwq3KHl3kp$30T9SJ$qRFV5ghW$UZcmtvsBm0Vm#IgCke8Tm4uW0SV0jNsT2yw7Dq" +
+		"nAzaKpXkXWxAFGLw5FHr#1leIsNc0thYU0Qy1TNEy7JiHsUnNUTTXZyLs4Pap9JFG2jFslx" +
+		"0W#KHXVuLgf#3Xw6le0z3nm95W1xtNuyy4IK0y6WLV1tk1e#XY9FXEy12u3Bu0dmLFWHVhW" +
+		"YoVw2Dp6$3Q0FmjCncwBXgCBQBCruPil#XYGMumlfjunt#VHi#XsQBvfeodOZUwBNBe5C2u" +
+		"nlk9h#El0KD03D87zmGdWGd0zu#1RFfuBbi7dsomcPqpzuk7CSHDynm7Mi70M6d#XCs2k1M" +
+		"fT746T8lBV26u2nu8vn3Btc7f7TwF70TO#8aVqA7YCQtWnQn7JTtmoE9LSFT4J0RMFBuTt2" +
+		"leqm3h5RBNuOd0fUMr$javshKUXfuEfu7RcV1xwVd0Fe0On#M9g5XqE3i6swyHwnZD05$0q" +
+		"k0zGstW0iFloR3Zio$W1y11O2DWJyJFWGM3h$ZoWll5gO6ly1lW4l0bOZzZkB#w7f0Qmdl4" +
+		"gT7l049Cjk5w3vfv9sCC9uqXQ0TOowGYs1jm32MkPy9wLiDv9Rz00g7$IvEyxZR4ws2UbTh" +
+		"W#a2tEVjCuUutzNDfcztwM6#xXfFowk7yb9$XNPkmrGPyJz8Kv$Ku8RRqpSHFBEJL9y5zTE" +
+		"H#EbQ6VOhXkpFGzEVZ6Ple#B6$S5NEOdkbZVkXZmjhvuhxGzJbpQsD$fm9dovmy2zOz3cNd" +
+		"EwV5ZZjaSjG6FRGYTc75zTnC$3RhpXkFgnZdiUlYPtWlPyOrkgBFquE#ijmVxLF1ks5zSdr" +
+		"M4Owzj3jFnK6ycGn2MxilDxPz6lVX2Tc7Bvm#pavuUgQ8U4D9GCIJDGc8UCuc0H7FtIJ0sd" +
+		"7GKSMrrGN7i$#TxOgl5xvUw1tH$V5xH1h5ytfdx06CQG1Zil#oz2Is9ze#ASRmh1w8VoHn8" +
+		"#6DnB#BG#BqODd$1sCGyIIDGSGtRQBHwD51Dw67qZOKUmZF$o6y1moXpo7a74BySFmMmzm$" +
+		"L17mUWHwZty3$fSvOm==");
 
 	public SimpleParser() {
 		super(PARSING_TABLES);
@@ -456,7 +456,7 @@ public class SimpleParser extends Parser {
 			{
 					 return new Symbol( new ArrayList() );
 			}
-			case 69: // feature = overridable DEF ID.id formals.fl COLON TYPE.t ASSIGN expr_or_native.e SEMI
+			case 69: // feature = OVERRIDE DEF ID.id formals.fl COLON TYPE.t ASSIGN expr_or_native.e SEMI
 			{
 					final Symbol _symbol_id = _symbols[offset + 3];
 					final String id = (String) _symbol_id.value;
@@ -464,15 +464,25 @@ public class SimpleParser extends Parser {
 					final Symbol _symbol_t = _symbols[offset + 6];
 					final String t = (String) _symbol_t.value;
 					final Symbol e = _symbols[offset + 8];
+					 return new OverrideFeatureMethod(id, (ArrayList)fl.value, t, (Expr)e);
+			}
+			case 70: // feature = DEF ID.id formals.fl COLON TYPE.t ASSIGN expr_or_native.e SEMI
+			{
+					final Symbol _symbol_id = _symbols[offset + 2];
+					final String id = (String) _symbol_id.value;
+					final Symbol fl = _symbols[offset + 3];
+					final Symbol _symbol_t = _symbols[offset + 5];
+					final String t = (String) _symbol_t.value;
+					final Symbol e = _symbols[offset + 7];
 					 return new FeatureMethod(id, (ArrayList)fl.value, t, (Expr)e);
 			}
-			case 70: // feature = VAR ID.id ASSIGN NATIVE SEMI
+			case 71: // feature = VAR ID.id ASSIGN NATIVE SEMI
 			{
 					final Symbol _symbol_id = _symbols[offset + 2];
 					final String id = (String) _symbol_id.value;
 					 return new FeatureVar(id );
 			}
-			case 71: // feature = VAR ID.id COLON TYPE.t ASSIGN expr.e SEMI
+			case 72: // feature = VAR ID.id COLON TYPE.t ASSIGN expr.e SEMI
 			{
 					final Symbol _symbol_id = _symbols[offset + 2];
 					final String id = (String) _symbol_id.value;
@@ -482,31 +492,31 @@ public class SimpleParser extends Parser {
 					final Expr e = (Expr) _symbol_e.value;
 					 return new FeatureVar(id, t, e );
 			}
-			case 72: // feature = LBRACE block.b RBRACE SEMI
+			case 73: // feature = LBRACE block.b RBRACE SEMI
 			{
 					final Symbol _symbol_b = _symbols[offset + 2];
 					final Block b = (Block) _symbol_b.value;
 					 return new FeatureBlock(b);
 			}
-			case 75: // expr_or_native = expr.e
+			case 74: // expr_or_native = expr.e
 			{
 					final Symbol _symbol_e = _symbols[offset + 1];
 					final Expr e = (Expr) _symbol_e.value;
 					 return e;
 			}
-			case 77: // formals = LPAREN formal_list.fl RPAREN
+			case 76: // formals = LPAREN formal_list.fl RPAREN
 			{
 					final Symbol _symbol_fl = _symbols[offset + 2];
 					final ArrayList fl = (ArrayList) _symbol_fl.value;
 					 return new Symbol(fl);
 			}
-			case 78: // formal_list = formal.f
+			case 77: // formal_list = formal.f
 			{
 					final Symbol _symbol_f = _symbols[offset + 1];
 					final Formal f = (Formal) _symbol_f.value;
 					 ArrayList fl = new ArrayList(); fl.add(f); return new Symbol(fl);
 			}
-			case 79: // formal_list = formal_list.fl COMMA formal.f
+			case 78: // formal_list = formal_list.fl COMMA formal.f
 			{
 					final Symbol _symbol_fl = _symbols[offset + 1];
 					final ArrayList fl = (ArrayList) _symbol_fl.value;
@@ -514,11 +524,11 @@ public class SimpleParser extends Parser {
 					final Formal f = (Formal) _symbol_f.value;
 					 fl.add(f); return new Symbol(fl);
 			}
-			case 80: // formal_list = empty
+			case 79: // formal_list = empty
 			{
 					 return new Symbol( new ArrayList() );
 			}
-			case 81: // formal = ID.id COLON TYPE.t
+			case 80: // formal = ID.id COLON TYPE.t
 			{
 					final Symbol _symbol_id = _symbols[offset + 1];
 					final String id = (String) _symbol_id.value;
@@ -534,9 +544,7 @@ public class SimpleParser extends Parser {
 			case 3: // program = bogus
 			case 34: // opt$actuals = actuals
 			case 59: // have_extends = empty
-			case 73: // overridable = OVERRIDE
-			case 74: // overridable = empty
-			case 76: // expr_or_native = NATIVE
+			case 75: // expr_or_native = NATIVE
 			{
 				return _symbols[offset + 1];
 			}

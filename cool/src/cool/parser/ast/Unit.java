@@ -11,6 +11,10 @@ import cool.symbol.SymbolTable;
  * To change this template use File | Settings | File Templates.
  */
 public class Unit extends Primary {
+    public Unit() {
+        this.expType = UNIT_TYPE;
+    }
+
     @Override
     public boolean check(SymbolNode pTable) {
         //To change body of implemented methods use File | Settings | File Templates.
