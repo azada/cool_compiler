@@ -32,11 +32,18 @@ public class IfNode extends Expr {
         result = result && co && ex && mx;
 
         // we should check if the main expr and the elseexp are the same type
-        if (!elseExpr.expType.equals(mainExpr.expType)){
-            Program.addError(new Exeption("else expression's and main expression's type are not the same",this));
-            result = false;
+        if (elseExpr.expType.equals(mainExpr.expType)){
+            this.expType = mainExpr.expType;
         }
-        this.expType = mainExpr.expType;
+        else{
+            String temp = Program.mutualParent(elseExpr.expType,mainExpr.expType);
+            if (temp != null)
+                this.expType = temp;
+            else {
+                Program.addError(new Exeption("the main expression and the else expression do not have a mutual parent" ,this));
+                result = false;
+            }
+        }
 
         //To change body of implemented methods use File | Settings | File Templates.
         return result;

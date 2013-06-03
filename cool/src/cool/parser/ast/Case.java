@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Time: 5:57 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Case extends Node {
+public class Case extends Expr {
     String id;
     String type;
     Block block;
