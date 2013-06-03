@@ -27,8 +27,6 @@ public class ClassNode extends Node {
         this.featureList = featureList;
         symbolNode = new SymbolNode() ;
         symbolNode.type  = new String(type);
-
-
     }
 
 
@@ -46,14 +44,22 @@ public class ClassNode extends Node {
         return result;
     }
     @Override
-    public boolean check(SymbolNode pTable) {
+    public boolean check(SymbolNode pTable){
         boolean result = true;
+        this.symbolNode.setParent(null);
         result = result && defined;
         for (int i=0 ; i<varFormals.size(); i++){
             boolean vf = ((Var)this.varFormals.get(i)).check(this.symbolNode);
             result = result && vf;
         }
-        this.symbolNode.setParent(null);
+        boolean ex = ext.check(pTable);
+        result = result && ex;
+        if(ext != null){
+            Program.getInstance().inheritance.put(type, ext.type);
+        }
+        else{
+            Program.getInstance().inheritance.put(type,null);
+        }
 
         for (int i=0 ; i < this.featureList.size(); i++){
              boolean res = ((Feature)this.featureList.get(i)).check(this.symbolNode);

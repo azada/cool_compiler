@@ -1,5 +1,6 @@
 package cool.parser.ast;
 
+import cool.symbol.Exeption;
 import cool.symbol.SymbolNode;
 import cool.symbol.SymbolTable;
 
@@ -31,8 +32,38 @@ public class Extends extends Node{
     }
     @Override
     public boolean check(SymbolNode pTable) {
+        boolean result = true;
+
+
+
+        // now we check this type exists
+        if (Program.getInstance().typeClassTable.containsKey(type)){
+
+            ArrayList temp = Program.getInstance().typeClassTable.get(type).varFormals;
+            if (actuals.size() != temp.size()){
+                Program.addError(new Exeption("the number of arguments in " + type + " is " + temp.size() + " while " + actuals.size()+" are given",this));
+                result = false;
+                return result;
+            }
+            for (Object actual : actuals) {
+                boolean fml = ((Expr) actual).check(pTable);
+                result = result && fml;
+            }
+            for(int i = 0 ; i<actuals.size() ;i++){
+                if (((Var)temp.get(i)).type.equals(((Expr)actuals.get(i)).expType))
+                    continue;
+                else{
+                    Program.addError(new Exeption("types passed to the constructor do not match the required types",this));
+                    result = false;
+                }
+            }
+        }
+        else{
+            Program.addError(new Exeption("type " + type + " has not been declared",this));
+        }
+
         //To change body of implemented methods use File | Settings | File Templates.
-        return false;
+        return result;
     }
     @Override
     public void accept( ) {

@@ -53,7 +53,7 @@ public class PrimaryActual extends Expr {
         }
         //and make sure we have the same type in actuals as we had in feature methods.
         for (int i = 0 ; i< temp.formals.size() ; i++){
-            if (!((Expr)actuals.get(i)).expType.equals(((Formal)(temp.formals.get(i))).type)){
+            if (!Program.getInstance().isCompatible(((Formal)(temp.formals.get(i))).type ,((Expr)actuals.get(i)).expType)){
                 Program.addError(new Exeption("type of actuals doesn't match argument list defined in the method",this));
                 result = false;
             }

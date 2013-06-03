@@ -14,6 +14,7 @@ import java.util.HashSet;
  * Time: 7:57 PM
  * To change this template use File | Settings | File Templates.
  */
+// a singleton for storing global information about the program
 public class Program {
 
     private static ArrayList classes = new ArrayList();
@@ -23,21 +24,40 @@ public class Program {
     public static HashMap<String , ClassNode> typeClassTable = new HashMap<String, ClassNode>();
     public static SymbolNode programSymbolNode = new SymbolNode();
     private static ArrayList<Exeption> errorList = new ArrayList<Exeption>();
+    public static HashMap<String, String> inheritance = new HashMap<String, String>();
     private static Program instance = new Program();
 
     private Program() {
-
     }
     public static Program getInstance(){
-        if (instance.typeTable.isEmpty()){
+        if(instance.typeTable.isEmpty()){
             instance.typeTable.put("Int", null);
             instance.typeTable.put("String", null);
             instance.typeTable.put("Boolean", null);
         }
         return instance;
     }
+    public static boolean isCompatible(String c, String p){
+        if(instance.inheritance.containsKey(c)){
+            if (c.equals(p))
+                return true;
+            String r = instance.inheritance.get(c);
+            if (r == null)
+                return false;
+            if (r.equals(p))
+                return true;
+            else{
+                return isCompatible(r, p);
+            }
+        }
+        else
+            return false;
+    }
     public static ArrayList getClasses(){
         return classes;
+    }
+    public static void setClasses(ArrayList cls){
+        classes = cls;
     }
     public static boolean typeTableContains(String a){
         return instance.typeTable.containsKey(a);
@@ -47,10 +67,6 @@ public class Program {
     }
     public static void typeTablePut(String a , HashMap<String,FeatureMethod> b){
         instance.typeTable.put(a, b);
-    }
-
-    public static void setClasses(ArrayList cls){
-        classes = cls;
     }
     public static SymbolNode getSymbolNode(){
         return programSymbolNode;
