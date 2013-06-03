@@ -1,7 +1,5 @@
 package cool.parser.ast;
 
-import beaver.Symbol;
-
 /**
  * Created with IntelliJ IDEA.
  * User: pedram
@@ -16,7 +14,9 @@ public abstract class Expr extends Node {
     public static final String OBJECT_TYPE = "Object";
     public static final String UNIT_TYPE = "Unit";
 
-
+    public boolean isConsistant(String c, String p){
+        return Program.isConsistant(c, p);
+    }
     String expType;
 
 }

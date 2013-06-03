@@ -2,7 +2,6 @@ package cool.parser.ast;
 
 import cool.symbol.Exeption;
 import cool.symbol.SymbolNode;
-import cool.symbol.SymbolTable;
 
 import java.util.ArrayList;
 
@@ -48,12 +47,12 @@ public class PrimaryActual extends Expr {
 
         // we should make sure we have the same number of actuals and formals in
         if (temp.formals.size() != actuals.size()){
-            Program.addError(new Exeption(temp.formals.size()+ " number of argmument needed and " + actuals + " are given",this));
+            Program.addError(new Exeption(temp.formals.size()+ " number of argument needed and " + actuals + " are given",this));
             result = false;
         }
         //and make sure we have the same type in actuals as we had in feature methods.
         for (int i = 0 ; i< temp.formals.size() ; i++){
-            if (!Program.getInstance().isCompatible(((Formal)(temp.formals.get(i))).type ,((Expr)actuals.get(i)).expType)){
+            if (!Program.getInstance().isConsistant(((Formal) (temp.formals.get(i))).type, ((Expr) actuals.get(i)).expType)){
                 Program.addError(new Exeption("type of actuals doesn't match argument list defined in the method",this));
                 result = false;
             }

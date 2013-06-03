@@ -4,8 +4,8 @@ import cool.symbol.Exeption;
 import cool.symbol.SymbolNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,7 +37,8 @@ public class Program {
         }
         return instance;
     }
-    public static boolean isCompatible(String c, String p){
+    public static boolean isConsistant
+            (String c, String p){
         if(instance.inheritance.containsKey(c)){
             if (c.equals(p))
                 return true;
@@ -47,11 +48,52 @@ public class Program {
             if (r.equals(p))
                 return true;
             else{
-                return isCompatible(r, p);
+                return isConsistant(r, p);
             }
         }
         else
             return false;
+    }
+    public static String mutualParent(String a, String b){
+        ArrayList<String> aList = new ArrayList<String>();
+        ArrayList<String> bList = new ArrayList<String>();
+        aList.add(a);
+        bList.add(b);
+        String temp = getInstance().inheritance.get(a);
+        while(true){
+            if(temp != null){
+                if(temp != null){
+                    aList.add(temp);
+                    temp = getInstance().inheritance.get(temp);
+                }
+                else
+                    break;
+            }
+            else
+                break;
+        }
+        temp = getInstance().inheritance.get(b);
+        while(true){
+            if(temp != null){
+                aList.add(temp);
+                temp = getInstance().inheritance.get(temp);
+            }
+            else
+                break;
+        }
+        //now we have both inheritance trees in two lists
+        Collections.reverse(aList);
+        Collections.reverse(bList);
+        String result = null;
+        for(int i = 0 ; i< Math.min(aList.size(), bList.size()) ; i++){
+            if (aList.get(i).equals(bList.get(i)))
+                result = aList.get(i);
+            else
+                break;
+        }
+        return result;
+
+
     }
     public static ArrayList getClasses(){
         return classes;

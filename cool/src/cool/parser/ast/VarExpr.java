@@ -3,7 +3,6 @@ package cool.parser.ast;
 import cool.symbol.Exeption;
 import cool.symbol.SymbolItem;
 import cool.symbol.SymbolNode;
-import cool.symbol.SymbolTable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,7 +36,7 @@ public class VarExpr extends Expr {
             pTable.insert(temp);
         }
         boolean ex = expr.check(pTable);
-        if(!expr.expType.equals(type)){
+        if(!Program.getInstance().isConsistant(expr.expType, type)){
             Program.addError(new Exeption("the type of this expression is not " + type ,this));
             result = false;
         }
