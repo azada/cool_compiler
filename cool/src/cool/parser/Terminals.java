@@ -34,8 +34,8 @@ public class Terminals {
 	static public final short NULL = 14;
 	static public final short OVERRIDE = 34;
 	static public final short PLUS = 22;
-	static public final short RBRACE = 2;
-	static public final short RPAREN = 1;
+	static public final short RBRACE = 1;
+	static public final short RPAREN = 2;
 	static public final short SEMI = 6;
 	static public final short STRING = 20;
 	static public final short STUB = 39;

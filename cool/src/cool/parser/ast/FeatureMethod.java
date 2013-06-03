@@ -56,8 +56,8 @@ public class FeatureMethod extends Feature {
 
         ///////////////////////here we check if we return the correct type in methods ///////////////////////////////
 //        System.out.println("expression type is" + expr.expType);
-        if(!expr.expType.equals(type)){
-            Program.addError(new Exeption("the return type of this expression is not " + type ,this));
+        if(!Program.isConsistant(expr.expType,type)){
+            Program.addError(new Exeption("the return type of this method is not " + expr.expType ,this));
             result = false;
         }
         ////////////////////////////////////////////////////////////////

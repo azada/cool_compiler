@@ -48,6 +48,7 @@ public class Case extends Expr {
                 result = false;
             }
         }
+        this.expType = block.expType;
         return result && bl;
         //To change body of implemented methods use File | Settings | File Templates.
     }

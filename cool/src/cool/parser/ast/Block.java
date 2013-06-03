@@ -16,17 +16,25 @@ public class Block extends Expr {
 
     ArrayList exprList;
     SymbolNode symbolNode ;
+    Expr end ;
+    boolean longInit = true;
 
     public Block(ArrayList exprList, Expr end) {
         this.exprList = exprList;
-        this.exprList.add(end);
-        this.expType = end.expType;
+        this.end = end;
         symbolNode = new SymbolNode();
     }
 
+    public Block() {
+        longInit = false;
+    }
 
     @Override
-    public boolean check(SymbolNode pTable) {
+    public boolean check(SymbolNode pTable){
+        if (!longInit){
+            this.expType = UNIT_TYPE;
+            return true;
+        }
         //To change body of implemented methods use File | Settings | File Templates.
         boolean result = true;
         this.symbolNode.setParent(pTable);
@@ -34,7 +42,9 @@ public class Block extends Expr {
             boolean el = ((Expr)(exprList.get(i))).check(symbolNode);
             result = result && el;
         }
-        return result;
+        boolean ed = this.end.check(symbolNode);
+        this.expType = end.expType;
+        return result && ed;
     }
 
 

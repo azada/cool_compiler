@@ -12,55 +12,55 @@ import cool.parser.ast.*;
 public class SimpleParser extends Parser {
 
 	static final ParsingTables PARSING_TABLES = new ParsingTables(
-		"U9pjc0cuLLKLn$$dd7kVlgU02Y6Yy7WoYA0F0Pa7dqWu99IbcUPGJfMQXaCEbNDgP9P3IbP" +
-		"cfgbfYgZC2k8iuWCL0GKSSpR54L3R$VPmxZlttWCVNrQVtwTdVV#prbdxl$RQU#rzxZddIZ" +
-		"LDvkuACURZO7raFjAcu0Ph8IMEsgYLQSPQuKLrGM#7r$jMczN4hZR$iXQoeiHjeqrq3TRpG" +
-		"PxoMhkbbbbZrcW3S8Ira9Jvl8xNJkghpcPXaFbUwt3pIV2iGkuqgxIXirQLc0jLeuqPtKAD" +
-		"DytQHGUhe5W$q64Qez5cldwe7#jxwgaJT8oErOyqHOcvKnkPczL5$Sm2B$fMqDzHRR2Ersc" +
-		"Cw7ITeY5a#6lAfELwCXInbWLfzbe7QT$W#S1ye7r0QsiXANCPlHwdlbZBWpHxxMAzPv5Pf0" +
-		"Cvpx8MaZAN4tiYiSlDqrxqgs3DLDlWQHdpcRf0xL8cBUFrS#s2FbYDhZPzgCu1LRL9uuUvs" +
-		"ZphHUS4lHMZzPRdZGZw9oaJQRP2bY$fRyuQeqFKtdjRX3qmMvjhgfaTFAy52POwwA1W7Q#V" +
-		"aU5GtMWUKKE6#LgwsfmxXjN#itvHDQD9kiCiCO#O9NP6#Whs4dE7RZUtEoiZcgYRp5BztYm" +
-		"DdgLSTLLtRMkjCfbZxb8lUmxNhmTfzbgzMKjldMjkDRVeF7VUJls3jqbVXpkPaG$WFCbLO9" +
-		"9sDlEgwhITUTWirYYpE7WMS$LbxQ4zhLKcypGM$ZZF2Vo7pPFwQbMVHsjlTiCts0t#sjRkc" +
-		"zfV#rNLxk$cGNrRDtEsk#7L84y4$PXvF5Ysd$jrbQxY$5qTLMA#QbxsmZoyFaad1zyCNQRB" +
-		"E5#8RARDKYRoIf3Rl6PDpm#UwMQ6UIYSPsX2YVcAUScBVXtqBzcptZSD$WFXF5s$IPd8Fxp" +
-		"eeg0lrYN1DzLCqs$T#NBmkvI9lEX5LmJz1$qn#AQOgVgJEryD$f8oaHUywDfWtKSrlESw#F" +
-		"UOkPplDLCqANYREAU$YhS4VQic1#isJTDqtQaPkakpDRFb5zGyvqLpWfwbkuCrL$VgVjsZ1" +
-		"tIV7jH3mTl4#HalUZZeUNeaMFFrg9grG0lrc1xNefH9otWzmNttf9PeiTixJscfbbNjdQUr" +
-		"t3mgUzYzqonPsCFjkQrIgsndscCyoEvCVrJs7dY#zyy5BpriDT$qGWM3pbhP8tYRIbdiiRv" +
-		"Ptl12Bq5dhR8itjkK$WxY2JfhbKMaluF$oRZUza8lGMUjiYnlQwH#QjxomdNGMQkC$vRZ$z" +
-		"CBrq6Nh8hHue5VDThrczCNh9JLINk5TvRlwsnjeq4woxnZtj6fGDQoEck5Otjt7cvMcfLmL" +
-		"y9OwMnbhRBUXxlUjoppoVbsrHOvtYqpsNOlMPVcCBlb#7ha#7R8yGqqxvlt6RE3jxsbeJdi" +
-		"hvbtpRkqEtZRMxdi8yrxvZtQ7RpjhLpsbRnjPNtr#CezMrTvTjGWyw7va5uTlCqnM6SeuZq" +
-		"yiU$Al3zle0sTVoDjh5QkfP6Mnj3IdhV13gn1HzwrXyBlN8hTAJ1ggsAL6zir4ni7XZstn7" +
-		"QZfLzLR4zjgrwPsBJtNSloYfRwgjX6HXmHw#VQg85KgLPrwazrkgcr#oxQbBUSjch7Ut4ZR" +
-		"whT#EtRdVsrLIbVNUYrDRyfFfyVKM$U6xSdfZwJhxlBK3tFnh9v3iYqh7sUdoOsNRsOt#Ng" +
-		"COzWJYsn2U#jTbqRYRQrARZgLDQc9JvRczgGftjfBL9UghDvYcuDXX6Lha53LPvkz5tFdY#" +
-		"uF9rAcRg6J7QSsKm3O1Jfhr2MANAP2iIacUggCdM2aT1lCMIgTIiz65GoE$DRcJ3MB3DYB5" +
-		"jKCIF4Lh1ozEcAzSkifPM24rkFoj7RjdGzwhYkp5IBBw6$x9XibkfvTcNa2JNDCcqrE#UCt" +
-		"lQvSqMVzJchPCVUepJFobd6Y9#bjIAtxWNuKMQMbJkedhcaCPsG8Zkt2xzgM#V4D8IOEdPo" +
-		"IqpaOWf4DEJ4r9NorER635j7ddfgrH9JusBgYEcU4rEpZfYOc9gScDr2JB4qjdwk0ZQcI4o" +
-		"dd9Z1fHeqX9XwxXtxLTo9jMgTMxTDGaoNqYxioDMch66jMyLYJaowfWtOFgOpdXvmsjE#ER" +
-		"xipkr07nkpIrgvlLF7cDfLxPssG8R3xPq4NJJkS37TdLKHutoEsR8pGqmLC#tHCJy7lFJ8t" +
-		"ebSkLLpVhTgfk8ehLf5$Vz7MJwRu$glyQjsiUTNxlprcjCNh9nt3lkUrOTtzBxhisOQ7TPi" +
-		"dTootjk7tZC#6DutFC#RoJQgPEKoFvMF6M3dxRZ$DxlQjpwUjUMGLfpXFZgYRJdPxuzQzwK" +
-		"ZegH3mPwq3KHl3kp$30T9SJ$qRFV5ghW$UZcmtvsBm0Vm#IgCke8Tm4uW0SV0jNsT2yw7Dq" +
-		"nAzaKpXkXWxAFGLw5FHr#1leIsNc0thYU0Qy1TNEy7JiHsUnNUTTXZyLs4Pap9JFG2jFslx" +
-		"0W#KHXVuLgf#3Xw6le0z3nm95W1xtNuyy4IK0y6WLV1tk1e#XY9FXEy12u3Bu0dmLFWHVhW" +
-		"YoVw2Dp6$3Q0FmjCncwBXgCBQBCruPil#XYGMumlfjunt#VHi#XsQBvfeodOZUwBNBe5C2u" +
-		"nlk9h#El0KD03D87zmGdWGd0zu#1RFfuBbi7dsomcPqpzuk7CSHDynm7Mi70M6d#XCs2k1M" +
-		"fT746T8lBV26u2nu8vn3Btc7f7TwF70TO#8aVqA7YCQtWnQn7JTtmoE9LSFT4J0RMFBuTt2" +
-		"leqm3h5RBNuOd0fUMr$javshKUXfuEfu7RcV1xwVd0Fe0On#M9g5XqE3i6swyHwnZD05$0q" +
-		"k0zGstW0iFloR3Zio$W1y11O2DWJyJFWGM3h$ZoWll5gO6ly1lW4l0bOZzZkB#w7f0Qmdl4" +
-		"gT7l049Cjk5w3vfv9sCC9uqXQ0TOowGYs1jm32MkPy9wLiDv9Rz00g7$IvEyxZR4ws2UbTh" +
-		"W#a2tEVjCuUutzNDfcztwM6#xXfFowk7yb9$XNPkmrGPyJz8Kv$Ku8RRqpSHFBEJL9y5zTE" +
-		"H#EbQ6VOhXkpFGzEVZ6Ple#B6$S5NEOdkbZVkXZmjhvuhxGzJbpQsD$fm9dovmy2zOz3cNd" +
-		"EwV5ZZjaSjG6FRGYTc75zTnC$3RhpXkFgnZdiUlYPtWlPyOrkgBFquE#ijmVxLF1ks5zSdr" +
-		"M4Owzj3jFnK6ycGn2MxilDxPz6lVX2Tc7Bvm#pavuUgQ8U4D9GCIJDGc8UCuc0H7FtIJ0sd" +
-		"7GKSMrrGN7i$#TxOgl5xvUw1tH$V5xH1h5ytfdx06CQG1Zil#oz2Is9ze#ASRmh1w8VoHn8" +
-		"#6DnB#BG#BqODd$1sCGyIIDGSGtRQBHwD51Dw67qZOKUmZF$o6y1moXpo7a74BySFmMmzm$" +
-		"L17mUWHwZty3$fSvOm==");
+		"U9pjc0cK5iKHn$ypiz#kB0XuWLox78iWnnAK5LUkHH2lQ1IDHn9Dp67Y6T4OZSOeYSOZQeo" +
+		"9nYjgel46yG11yK954Ln04L3HUCSZHl4MDPrVpzHyEz#n#pOcBy$dS#hzfwghgxgxglgRcV" +
+		"waohtSFKNat2ScVUm#rXpk$$8Ir6BJ71DS7S3UlgMZD44ZhITFQ7#XaJfHOqpp15YfIhVIo" +
+		"tYkX3vLXNAnb27p7AVrJDEiJZRcjy5riJH5arNLofp7gwDfdZ4oISFoke$SHze0NEibABLy" +
+		"Hbsqlbk2z7n2gZRUMLUQRfrRX#yw7UWbwFcyRHTrTOjLuvOPBKcuVk3kCCs7K3EuFPO#p5i" +
+		"kKwKsSekHcZKDJ28peNjO1#dxH7KaKHscd#g76goVw73zM4SeKfKsTZDqc$fg2xSq8UrZ$3" +
+		"lkOPFIElnCZJhPBKejeMRt95ZgyweTOjddzLlQf4nUZwR2YzJDD6iIKdVZcxhvfdlVlQzwC" +
+		"C9Bq9gyxL4wWJ7MkASJKa#JRdMtcBG2ckzMQ7OihKWjeMRTognFkwSIqkd6Rr0$argYdAw1" +
+		"6f1QGl6kIJZHVTUY$BCsBudo0WtHD5siITRskR$UxvdYtBkxtDqUsZ$E$RC9wUl6UskMwVm" +
+		"eGzsTkXoSnPv$Da#l9QGjZP#f1fCcQfZErodwjSxMgTemjQHd6lDD0jjgktXj#sadVQzaNt" +
+		"nLkxXLsXMmDktiLa6pz3KtAvQozBZsTAkrXrjjxTNGJEtbPiPIbcvoDtfeNsk$RjISS5skg" +
+		"qpwXcRe6irq3xe7OYJQ9atLeUphXyZjG$ecyVdrd#qUquObkLtebhk5Ei0z6kVsrOHqYF5Z" +
+		"g4UYcwTZsGStmq$J6VfDQWdzFI7zrlWvxFj4DrU$m$vSDvVxxzsyr19w9I6TP$n2NMIws$H" +
+		"7$2vnjt7$4vwlvEdbX7IPyR$e2jFDqL#nlz$DmNiOqijvUYaXNMtI0dUlIRFTVVZDWi$HZN" +
+		"Y#bASN4z9Dnc$MF9DkqUrkjkRgBkxpyNmnJoyaf3kCtwcxJRf7zsg1xjTzMgW7zA1fcxYdJ" +
+		"x67Z2$ImoOjrX8rwn4jrJ8jrwCjJpptN49wpFZZMc7IIgtMAZsf9xH6Jxb7JDl4$My9wMdZ" +
+		"N2rIzaejwPb6SvAf$Tv9hkAzttBvlL$iqxiLdzJE#xGrzXV5BfCZzqP2vDfuLYgeHQ9j#Yo" +
+		"LSFz8Y56CPwM2MH9jK$g4GMCyAnLuf4#OpxAkjn9Y5EDPgM2MjpHUFtTl9aJRU5Ogi7ypjl" +
+		"zdGhIDvwMYrQB1lcIrxOlfIwlKgezsjw#07#bN6gJH#gLxsxsjuu2yv7bMicjuV1$hrhgrs" +
+		"Ax5OcqiAoiLZ3us7hrNWKwnRdlrAAFjbPbjnxpqXpAMTMLqcvNHVQMCRYltddkFDST8v4JI" +
+		"DcMiTtFlk7VeZv78YLJM#c3thdkN$XY9d4XbhI$bYoohgqLNgEbVeXcbqUu3zm6ZnaXahgr" +
+		"raWA5VF5oMk0xkKhhnVgEwgJruvvwUcGztTHTcrA3dlG4#DJWCvwUAdLGDNjbSxxoElilTM" +
+		"t0ryT6sbYRc7OeNrwzU4lqCSzwF9NtbBPYnQrvrkOzStZceFhOptjkIMHrhNesvJsJ20TO7" +
+		"1qOep32#f886yczY33rdM0M0QCK#cvHrZUNyQqpY#tHjFYAdg34jvwdvm1yqvhupEJQoEyK" +
+		"Hgzctm#AOqrdhBPnE#TNsrA7uN7yvMgPP27DwvXMyZf0$OhoMckprHJid92UYfBuaZ5QSbD" +
+		"f5fwt#DQLhKd8Vgt8#APHJcBDfL6kXrKsolfyb3wwDCeU9L7Mq1CHOywYz9OXzueIopJ6#e" +
+		"BSDzYg1kARHXImIq96h8ZtRdPLYKy7ynb7E$6fHjU7qqZ8VgZW5ztYa$nwwXanYDVcvsieM" +
+		"Lir4KHKfZ2AcZ9HLCQ$gub5ba4RyHRNFzt5EUPBLbzBpq1$pZQFR0qZoyHcDbTV$FkNcIk8" +
+		"ROA2t8OsKss#uZwprN6rnd6lBPFRT9UCoVZqOswVcxvaf7yPdyfy3LjsPNKxVOACpmxuv6A" +
+		"V3cLzjiXdhkM9bCEdJ#opTLcVD9v##TzsRUnHHmRxGkLy#kVZwMm#NMdtHDEBdFTcTQK#ON" +
+		"vjwLEhNnnb3LNfWNrKngUx#NH4d$Xqeg9#DzTIrOruFfJwR9BuEAx4nnLTsRrFAsTQzev9H" +
+		"Nidu#dtJf6F1fRtIUrYdpR6$gBO5UJ8Qa6hlRNuB9NupsVvVAxhVsPViZSJ##9dORjY#jAg" +
+		"p3VdSDwJ8$YU7zcUcccorQnDsuBHkzde6HqMYMviEMrcjctpKbdB$qf71CZbTjp$sxfKrnv" +
+		"DQtD8pvoKdE$c0tzMwU1Fbs03C16C15F1qM0tS9OKp8AV3zzC2liYpmPtWcl0Ak3$a$YGVh" +
+		"x9WofmAcZ4Td$uE32U$hEbw30uQmZsHPuEFmH#7fmpStGjVIU0YsaV24u4Pz2#0In27XB7e" +
+		"8Xv0spq4dmUxUNm1#2qHRkI4sp57LBkLNWp$4ZuSu2mApWNLWJOtmlk0rVuOo9y3V3ZFWvG" +
+		"1Q#1fu3lmpTO39Q2rVXl2bz7RBtXdu3DSUX9crDOi3toit1o4NO4tMZt0AEHcy3EyKbDuM3" +
+		"u7jZTXBmhyX78VZnEJC4#$h28lW7i2NO7v2ay1Lm6Y35yZBZ8S$W6SSDpp1$repq6KBi8dZ" +
+		"iD36Uz5y2Pks8Ks0LGonnpLtPdhal0pS2lvH5ygN#uDpAdxN0o89wGFHBotH5k3AXBU2YWV" +
+		"k5#u03cmZSy6HmBg5TmCFmWS3eu5nm3ZcTUQXnU2gXdG4t2gm7v3nS27ylru3f07SAxWA$F" +
+		"EIJYAcIVuoNm6M0OeAuXDGuN068CVNxzFnVlmUy1jmFsHBWCF0ZO8#5Am9u8NmVUxWNm8dW" +
+		"Vi7V2Dy57n4CT8seNTQNDVeasX5FlYDz7I5uYDaZ4sJkYhb4NG6wYMZ00r07ES16vYgXnr1" +
+		"$mUuc6WgtiTtUXvoPtIcKFjZTxJTHSmwr$QiRsYAojwPONjdCbDec#iYeZTpNRYunVMMeVJ" +
+		"BU#YPcnPnQDsSFqSpFhMMoyodYTnVL9Pkphh6zePkpZogsxABQbcJ4M63#gTNl$N0gkBnFR" +
+		"5333R0ulCy$BRQz3DsJaDrhai3wZdsXpTIcQUtnH#$IC$w2svmqRYzPvIbls6RjFC$FjL3J" +
+		"cWSRFB5fNJP7TUUsPw$CAkwPgHnxke$ao6GttyaY#KVpRU0Hlo16SqaR4SiJRCqN05qe40j" +
+		"wiaI7WFHiP0jwxaS7BeV6WgErvHMpdtn3#NwmXw8R0Hy57mRUaBq6WRNa1J4HkO5qDhAi1t" +
+		"M3y1yV$mKXJD8YtYF$dC0GH23GfHXHp$n$F1FecnEVd4FWpVgJ9yCd6c#3RqBSDSYFV08ry" +
+		"2pGoPYDpDk8$5ht76EosWszdV1nyfty3Bh9Q6G==");
 
 	public SimpleParser() {
 		super(PARSING_TABLES);
@@ -277,24 +277,28 @@ public class SimpleParser extends Parser {
 					final Expr e = (Expr) _symbol_e.value;
 					 ArrayList es = (ArrayList) el.value; return new Block(es , e);
 			}
-			case 38: // st_list = st_list.el new_var.ve SEMI
+			case 38: // block = empty
+			{
+					 return new Bock();
+			}
+			case 39: // st_list = st_list.el new_var.ve SEMI
 			{
 					final Symbol el = _symbols[offset + 1];
 					final Symbol ve = _symbols[offset + 2];
 					 ArrayList es = (ArrayList) el.value; es.add(ve); return new Symbol(es);
 			}
-			case 39: // st_list = st_list.el expr.e SEMI
+			case 40: // st_list = st_list.el expr.e SEMI
 			{
 					final Symbol el = _symbols[offset + 1];
 					final Symbol _symbol_e = _symbols[offset + 2];
 					final Expr e = (Expr) _symbol_e.value;
 					 ArrayList es = (ArrayList) el.value; es.add(e); return new Symbol(es);
 			}
-			case 40: // st_list = empty
+			case 41: // st_list = empty
 			{
 					 ArrayList el  = new ArrayList(); return new Symbol(el);
 			}
-			case 41: // new_var = VAR ID.id COLON TYPE.t ASSIGN expr.e
+			case 42: // new_var = VAR ID.id COLON TYPE.t ASSIGN expr.e
 			{
 					final Symbol _symbol_id = _symbols[offset + 2];
 					final String id = (String) _symbol_id.value;
@@ -304,13 +308,13 @@ public class SimpleParser extends Parser {
 					final Expr e = (Expr) _symbol_e.value;
 					 return new VarExpr( id, t, e);
 			}
-			case 42: // cases = LBRACE case_block.cb RBRACE
+			case 43: // cases = LBRACE case_block.cb RBRACE
 			{
 					final Symbol _symbol_cb = _symbols[offset + 2];
 					final ArrayList cb = (ArrayList) _symbol_cb.value;
 					 return new Symbol(cb);
 			}
-			case 43: // case_block = CASE ID.id COLON TYPE.t ARROW block.b case_block.cb
+			case 44: // case_block = CASE ID.id COLON TYPE.t ARROW block.b case_block.cb
 			{
 					final Symbol _symbol_id = _symbols[offset + 2];
 					final String id = (String) _symbol_id.value;
@@ -322,7 +326,7 @@ public class SimpleParser extends Parser {
 					final ArrayList cb = (ArrayList) _symbol_cb.value;
 					 cb.add(new Case(id,t,b));return new Symbol(cb);
 			}
-			case 44: // case_block = CASE NULL ARROW block.b case_block.cb
+			case 45: // case_block = CASE NULL ARROW block.b case_block.cb
 			{
 					final Symbol _symbol_b = _symbols[offset + 4];
 					final Block b = (Block) _symbol_b.value;
@@ -330,23 +334,23 @@ public class SimpleParser extends Parser {
 					final ArrayList cb = (ArrayList) _symbol_cb.value;
 					 cb.add(new Case(b));return new Symbol(cb);
 			}
-			case 45: // case_block = empty
+			case 46: // case_block = empty
 			{
 					 return new Symbol(new ArrayList());
 			}
-			case 46: // lexpr = SUPER DOT ID actuals.a
+			case 47: // lexpr = SUPER DOT ID actuals.a
 			{
 					final Symbol _symbol_a = _symbols[offset + 4];
 					final ArrayList a = (ArrayList) _symbol_a.value;
 					 return new SuperActual(a);
 			}
-			case 47: // lexpr = ident.id
+			case 48: // lexpr = ident.id
 			{
 					final Symbol _symbol_id = _symbols[offset + 1];
 					final Id id = (Id) _symbol_id.value;
 					 return id;
 			}
-			case 50: // classdecl = CLASS TYPE.t varformals.v have_extends.e classbody.fl
+			case 51: // classdecl = CLASS TYPE.t varformals.v have_extends.e classbody.fl
 			{
 					final Symbol _symbol_t = _symbols[offset + 2];
 					final String t = (String) _symbol_t.value;
@@ -357,27 +361,27 @@ public class SimpleParser extends Parser {
 					final Symbol fl = _symbols[offset + 5];
 					 return new ClassNode(t, v, e, (ArrayList)fl.value);
 			}
-			case 51: // varformals = LPAREN RPAREN
+			case 52: // varformals = LPAREN RPAREN
 			{
 					 return new Symbol(new ArrayList());
 			}
-			case 52: // varformals = LPAREN var_list.vl RPAREN
+			case 53: // varformals = LPAREN var_list.vl RPAREN
 			{
 					final Symbol _symbol_vl = _symbols[offset + 2];
 					final ArrayList vl = (ArrayList) _symbol_vl.value;
 					 return new Symbol(vl);
 			}
-			case 53: // varformals = empty
+			case 54: // varformals = empty
 			{
 					 return new Symbol(new ArrayList());
 			}
-			case 54: // var_list = one_var.v
+			case 55: // var_list = one_var.v
 			{
 					final Symbol _symbol_v = _symbols[offset + 1];
 					final Var v = (Var) _symbol_v.value;
 					 ArrayList vl = new ArrayList(); vl.add(v); return new Symbol(vl);
 			}
-			case 55: // var_list = var_list.vl COMMA one_var.v
+			case 56: // var_list = var_list.vl COMMA one_var.v
 			{
 					final Symbol _symbol_vl = _symbols[offset + 1];
 					final ArrayList vl = (ArrayList) _symbol_vl.value;
@@ -385,11 +389,11 @@ public class SimpleParser extends Parser {
 					final Var v = (Var) _symbol_v.value;
 					 vl.add(v); return new Symbol(vl);
 			}
-			case 56: // var_list = empty
+			case 57: // var_list = empty
 			{
 					 new Symbol( new ArrayList() );
 			}
-			case 57: // one_var = VAR ID.id COLON TYPE.t
+			case 58: // one_var = VAR ID.id COLON TYPE.t
 			{
 					final Symbol _symbol_id = _symbols[offset + 2];
 					final String id = (String) _symbol_id.value;
@@ -397,12 +401,12 @@ public class SimpleParser extends Parser {
 					final String t = (String) _symbol_t.value;
 					 return new Var(id, t);
 			}
-			case 58: // have_extends = EXTENDS type_or_native.ext
+			case 59: // have_extends = EXTENDS type_or_native.ext
 			{
 					final Symbol ext = _symbols[offset + 2];
 					 return ext;
 			}
-			case 60: // type_or_native = TYPE.t actuals.a
+			case 61: // type_or_native = TYPE.t actuals.a
 			{
 					final Symbol _symbol_t = _symbols[offset + 1];
 					final String t = (String) _symbol_t.value;
@@ -410,23 +414,23 @@ public class SimpleParser extends Parser {
 					final ArrayList a = (ArrayList) _symbol_a.value;
 					 return new Extends(t, a);
 			}
-			case 61: // type_or_native = NATIVE
+			case 62: // type_or_native = NATIVE
 			{
 					 return new Extends();
 			}
-			case 62: // actuals = LPAREN exp_list.el RPAREN
+			case 63: // actuals = LPAREN exp_list.el RPAREN
 			{
 					final Symbol _symbol_el = _symbols[offset + 2];
 					final ArrayList el = (ArrayList) _symbol_el.value;
 					 return new Symbol(el);
 			}
-			case 63: // exp_list = expr.e
+			case 64: // exp_list = expr.e
 			{
 					final Symbol _symbol_e = _symbols[offset + 1];
 					final Expr e = (Expr) _symbol_e.value;
 					 ArrayList el = new ArrayList(); el.add(e); return new Symbol(el);
 			}
-			case 64: // exp_list = exp_list.el COMMA expr.e
+			case 65: // exp_list = exp_list.el COMMA expr.e
 			{
 					final Symbol _symbol_el = _symbols[offset + 1];
 					final ArrayList el = (ArrayList) _symbol_el.value;
@@ -434,17 +438,17 @@ public class SimpleParser extends Parser {
 					final Expr e = (Expr) _symbol_e.value;
 					 el.add(e); return new Symbol(el);
 			}
-			case 65: // exp_list = empty
+			case 66: // exp_list = empty
 			{
 					 return new Symbol( new ArrayList() );
 			}
-			case 66: // classbody = LBRACE feature_list.fl RBRACE
+			case 67: // classbody = LBRACE feature_list.fl RBRACE
 			{
 					final Symbol _symbol_fl = _symbols[offset + 2];
 					final ArrayList fl = (ArrayList) _symbol_fl.value;
 					 return new Symbol(fl);
 			}
-			case 67: // feature_list = feature.f feature_list.fl
+			case 68: // feature_list = feature.f feature_list.fl
 			{
 					final Symbol _symbol_f = _symbols[offset + 1];
 					final Feature f = (Feature) _symbol_f.value;
@@ -452,11 +456,11 @@ public class SimpleParser extends Parser {
 					final ArrayList fl = (ArrayList) _symbol_fl.value;
 					 fl.add(f); return new Symbol(fl);
 			}
-			case 68: // feature_list = empty
+			case 69: // feature_list = empty
 			{
 					 return new Symbol( new ArrayList() );
 			}
-			case 69: // feature = OVERRIDE DEF ID.id formals.fl COLON TYPE.t ASSIGN expr_or_native.e SEMI
+			case 70: // feature = OVERRIDE DEF ID.id formals.fl COLON TYPE.t ASSIGN expr_or_native.e SEMI
 			{
 					final Symbol _symbol_id = _symbols[offset + 3];
 					final String id = (String) _symbol_id.value;
@@ -466,7 +470,7 @@ public class SimpleParser extends Parser {
 					final Symbol e = _symbols[offset + 8];
 					 return new OverrideFeatureMethod(id, (ArrayList)fl.value, t, (Expr)e);
 			}
-			case 70: // feature = DEF ID.id formals.fl COLON TYPE.t ASSIGN expr_or_native.e SEMI
+			case 71: // feature = DEF ID.id formals.fl COLON TYPE.t ASSIGN expr_or_native.e SEMI
 			{
 					final Symbol _symbol_id = _symbols[offset + 2];
 					final String id = (String) _symbol_id.value;
@@ -476,13 +480,13 @@ public class SimpleParser extends Parser {
 					final Symbol e = _symbols[offset + 7];
 					 return new FeatureMethod(id, (ArrayList)fl.value, t, (Expr)e);
 			}
-			case 71: // feature = VAR ID.id ASSIGN NATIVE SEMI
+			case 72: // feature = VAR ID.id ASSIGN NATIVE SEMI
 			{
 					final Symbol _symbol_id = _symbols[offset + 2];
 					final String id = (String) _symbol_id.value;
 					 return new FeatureVar(id );
 			}
-			case 72: // feature = VAR ID.id COLON TYPE.t ASSIGN expr.e SEMI
+			case 73: // feature = VAR ID.id COLON TYPE.t ASSIGN expr.e SEMI
 			{
 					final Symbol _symbol_id = _symbols[offset + 2];
 					final String id = (String) _symbol_id.value;
@@ -492,31 +496,31 @@ public class SimpleParser extends Parser {
 					final Expr e = (Expr) _symbol_e.value;
 					 return new FeatureVar(id, t, e );
 			}
-			case 73: // feature = LBRACE block.b RBRACE SEMI
+			case 74: // feature = LBRACE block.b RBRACE SEMI
 			{
 					final Symbol _symbol_b = _symbols[offset + 2];
 					final Block b = (Block) _symbol_b.value;
 					 return new FeatureBlock(b);
 			}
-			case 74: // expr_or_native = expr.e
+			case 75: // expr_or_native = expr.e
 			{
 					final Symbol _symbol_e = _symbols[offset + 1];
 					final Expr e = (Expr) _symbol_e.value;
 					 return e;
 			}
-			case 76: // formals = LPAREN formal_list.fl RPAREN
+			case 77: // formals = LPAREN formal_list.fl RPAREN
 			{
 					final Symbol _symbol_fl = _symbols[offset + 2];
 					final ArrayList fl = (ArrayList) _symbol_fl.value;
 					 return new Symbol(fl);
 			}
-			case 77: // formal_list = formal.f
+			case 78: // formal_list = formal.f
 			{
 					final Symbol _symbol_f = _symbols[offset + 1];
 					final Formal f = (Formal) _symbol_f.value;
 					 ArrayList fl = new ArrayList(); fl.add(f); return new Symbol(fl);
 			}
-			case 78: // formal_list = formal_list.fl COMMA formal.f
+			case 79: // formal_list = formal_list.fl COMMA formal.f
 			{
 					final Symbol _symbol_fl = _symbols[offset + 1];
 					final ArrayList fl = (ArrayList) _symbol_fl.value;
@@ -524,11 +528,11 @@ public class SimpleParser extends Parser {
 					final Formal f = (Formal) _symbol_f.value;
 					 fl.add(f); return new Symbol(fl);
 			}
-			case 79: // formal_list = empty
+			case 80: // formal_list = empty
 			{
 					 return new Symbol( new ArrayList() );
 			}
-			case 80: // formal = ID.id COLON TYPE.t
+			case 81: // formal = ID.id COLON TYPE.t
 			{
 					final Symbol _symbol_id = _symbols[offset + 1];
 					final String id = (String) _symbol_id.value;
@@ -537,18 +541,18 @@ public class SimpleParser extends Parser {
 					  return new Formal(id,t);
 			}
 			case 33: // opt$actuals = 
-			case 48: // empty = 
+			case 49: // empty = 
 			{
 				return new Symbol(null);
 			}
 			case 3: // program = bogus
 			case 34: // opt$actuals = actuals
-			case 59: // have_extends = empty
-			case 75: // expr_or_native = NATIVE
+			case 60: // have_extends = empty
+			case 76: // expr_or_native = NATIVE
 			{
 				return _symbols[offset + 1];
 			}
-			case 49: // bogus = STUB CLASS EXTENDS VAR OVERRIDE DEF NATIVE NEW NULL THIS CASE MATCH IF ELSE WHILE SUPER LPAREN RPAREN LBRACE RBRACE COLON COMMA ASSIGN SEMI ARROW DOT PLUS MINUS TIMES DIV LE LT EQUALS NOT TYPE ID INTEGER STRING BOOLEAN
+			case 50: // bogus = STUB CLASS EXTENDS VAR OVERRIDE DEF NATIVE NEW NULL THIS CASE MATCH IF ELSE WHILE SUPER LPAREN RPAREN LBRACE RBRACE COLON COMMA ASSIGN SEMI ARROW DOT PLUS MINUS TIMES DIV LE LT EQUALS NOT TYPE ID INTEGER STRING BOOLEAN
 			{
 				return _symbols[offset + 39];
 			}
