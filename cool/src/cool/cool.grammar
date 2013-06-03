@@ -138,7 +138,7 @@ ident		=	ID.id actuals?                                          {: return new I
 
 
 block = st_list.el expr.e                                               {: ArrayList es = (ArrayList) el.value; return new Block(es , e); :}
-    | empty                                                             {: return new Bock(); :}
+    | empty                                                             {: return new Block(); :}
     ;
 
 

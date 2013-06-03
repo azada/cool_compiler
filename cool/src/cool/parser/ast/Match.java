@@ -29,6 +29,7 @@ public class Match extends Expr {
         for (int i=0 ; i<cases.size(); i++){
             boolean vf = ((Case)this.cases.get(i)).check(pTable);
             result = result && vf;
+
         }
         if (cases.size() ==0 ){
             Program.addError(new Exeption("Match needs at least one case",this));
@@ -51,7 +52,6 @@ public class Match extends Expr {
                 this.expType = temp;
             }
         }
-        // now we check if the primary is a superclass of cases output
 
         //To change body of implemented methods use File | Settings | File Templates.
         return result && ex;

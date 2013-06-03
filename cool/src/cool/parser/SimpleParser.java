@@ -279,7 +279,7 @@ public class SimpleParser extends Parser {
 			}
 			case 38: // block = empty
 			{
-					 return new Bock();
+					 return new Block();
 			}
 			case 39: // st_list = st_list.el new_var.ve SEMI
 			{

@@ -1,6 +1,7 @@
 package cool.parser.ast;
 
 import cool.symbol.Exeption;
+import cool.symbol.SymbolItem;
 import cool.symbol.SymbolNode;
 import cool.symbol.SymbolTable;
 
@@ -36,18 +37,11 @@ public class Case extends Expr {
     }
     public boolean check(SymbolNode pTable) {
         boolean result = true;
-        boolean bl = block.check(pTable);
         if (longInit){
-            if (pTable.lookup(id) == null){
-                Program.addError(new Exeption(id + "has not been defined before",this));
-                result = false;
-            }
-            if (!pTable.lookup(id).getType().equals(type)){
-                // if the id's type is not equal to type
-                Program.addError(new Exeption("type Of " + id + " is not " + type,this));
-                result = false;
-            }
+            SymbolItem temp = new SymbolItem(id, type, false);
+            pTable.insert(temp);
         }
+        boolean bl = block.check(pTable);
         this.expType = block.expType;
         return result && bl;
         //To change body of implemented methods use File | Settings | File Templates.
