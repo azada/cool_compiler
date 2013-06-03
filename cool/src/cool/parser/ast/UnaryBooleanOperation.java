@@ -1,5 +1,7 @@
 package cool.parser.ast;
 
+import cool.symbol.SymbolNode;
+
 import java.util.ArrayList;
 
 /**
@@ -9,14 +11,6 @@ import java.util.ArrayList;
  * Time: 4:49 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UnaryBooleanOperation extends UnaryOperation {
-    public UnaryBooleanOperation(ArrayList operands) {
-        super(operands);
-    }
+public abstract class UnaryBooleanOperation extends UnaryOperation {
 
-    @Override
-    public void accept() {
-        JSONLogger.openNode("expr");
-        JSONLogger.closeNode();
-    }
 }

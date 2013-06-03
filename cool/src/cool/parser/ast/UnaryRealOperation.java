@@ -1,5 +1,7 @@
 package cool.parser.ast;
 
+import cool.symbol.SymbolNode;
+
 import java.util.ArrayList;
 
 /**
@@ -9,13 +11,6 @@ import java.util.ArrayList;
  * Time: 4:48 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UnaryRealOperation extends UnaryOperation {
-    public UnaryRealOperation(ArrayList operands) {
-        super(operands);
-    }
+public abstract class UnaryRealOperation extends UnaryOperation {
 
-    @Override
-    public void accept() {
-        super.accept();    //To change body of overridden methods use File | Settings | File Templates.
-    }
 }

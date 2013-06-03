@@ -119,9 +119,9 @@ primary		=
 		|	INTEGER.i                                                   {: return new IntegerNode(Integer.parseInt(i)); :}
 		|	STRING.s                                                    {: return new StringNode(s); :}
 		|	BOOLEAN.b                                                   {: return new BooleanNode(b); :}
-		|   MINUS primary.p                                             {: ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryRealOperation(operands); :}
+		|   MINUS primary.p                                             {: ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryMinusOperation(operands); :}
 		|	lexpr.e                                                     {: return e; :}
-		|   NOT primary.p                                               {: ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryBooleanOperation(operands); :}
+		|   NOT primary.p                                               {: ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryNotOperation(operands); :}
 		|   primary.p DOT ID.id actuals.a                               {: Primary pp = (Primary)p.value ; return new PrimaryActual(a,pp, id); :}
 		|   NEW TYPE.t actuals.s                                        {: return new Instance(t,s); :}
 		;

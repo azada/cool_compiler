@@ -231,7 +231,7 @@ public class SimpleParser extends Parser {
 			case 28: // primary = MINUS primary.p
 			{
 					final Symbol p = _symbols[offset + 2];
-					 ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryRealOperation(operands);
+					 ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryMinusOperation(operands);
 			}
 			case 29: // primary = lexpr.e
 			{
