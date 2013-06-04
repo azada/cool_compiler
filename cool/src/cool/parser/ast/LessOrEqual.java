@@ -1,5 +1,8 @@
 package cool.parser.ast;
 
+import cool.symbol.Exeption;
+import cool.symbol.SymbolNode;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +14,34 @@ import java.util.ArrayList;
  */
 public class LessOrEqual extends BooleanOperation {
     public LessOrEqual(ArrayList operands) {
-        super(operands);
+        operandsList = operands;
+    }
+
+    @Override
+    public void accept() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean check(SymbolNode pTable) {
+        boolean result = true;
+        for (Object operand : operandsList) {
+            boolean fml = ((Expr) operand).check(pTable);
+            result = result && fml;
+        }
+
+        if (((Expr)(operandsList.get(1))).expType.equals(((Expr)(operandsList.get(0))).expType)){
+            if (!((Expr)(operandsList.get(1))).expType.equals(INTEGER_TYPE)){
+                Program.addError(new Exeption("one or two sides of the operation is not integer",this));
+                result = false;
+            }
+        }
+        else{
+            Program.addError(new Exeption("two sides of the operation do not have the same type",this));
+            result = false;
+        }
+
+        this.expType = BOOLEAN_TYPE;
+        return result;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

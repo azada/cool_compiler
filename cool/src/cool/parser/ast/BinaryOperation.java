@@ -9,9 +9,6 @@ import java.util.ArrayList;
  * Time: 11:05 PM
  * To change this template use File | Settings | File Templates.
  */
-public class BinaryOperation extends ExpOperation{
+public abstract class BinaryOperation extends ExpOperation{
 
-    public BinaryOperation(ArrayList operands) {
-        super(operands);
-    }
 }

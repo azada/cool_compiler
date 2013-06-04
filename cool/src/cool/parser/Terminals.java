@@ -45,4 +45,47 @@ public class Terminals {
 	static public final short TYPE = 31;
 	static public final short VAR = 29;
 	static public final short WHILE = 28;
+
+	static public final String[] NAMES = {
+		"EOF",
+		"RBRACE",
+		"RPAREN",
+		"MINUS",
+		"COMMA",
+		"LBRACE",
+		"SEMI",
+		"CASE",
+		"ELSE",
+		"LPAREN",
+		"ID",
+		"LE",
+		"LT",
+		"EQUALS",
+		"NULL",
+		"NEW",
+		"THIS",
+		"SUPER",
+		"NOT",
+		"INTEGER",
+		"STRING",
+		"BOOLEAN",
+		"PLUS",
+		"TIMES",
+		"DIV",
+		"DOT",
+		"MATCH",
+		"IF",
+		"WHILE",
+		"VAR",
+		"ASSIGN",
+		"TYPE",
+		"DEF",
+		"COLON",
+		"OVERRIDE",
+		"EXTENDS",
+		"CLASS",
+		"NATIVE",
+		"ARROW",
+		"STUB"
+	};
 }

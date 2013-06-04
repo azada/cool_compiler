@@ -16,7 +16,7 @@
             compress         = "no"
             exportTables     = "no"
             sortTerminals    = "yes"
-            terminalNames    = "no"
+            terminalNames    = "yes"
             exportTerminals  = "yes"
             useSwitch        = "yes"
             anonymousActions = "yes"

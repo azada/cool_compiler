@@ -1,5 +1,7 @@
 package cool.parser.ast;
 
+import cool.symbol.SymbolNode;
+
 import java.util.ArrayList;
 
 /**
@@ -11,7 +13,17 @@ import java.util.ArrayList;
  */
 public class DivisionOperation extends RealOperation {
     public DivisionOperation(ArrayList operands) {
-        super(operands);
+
         this.expType = INTEGER_TYPE;
+    }
+
+    @Override
+    public void accept() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean check(SymbolNode pTable) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

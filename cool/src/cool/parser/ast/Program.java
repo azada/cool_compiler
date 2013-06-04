@@ -39,6 +39,9 @@ public class Program {
     }
     public static boolean isConsistant
             (String c, String p){
+        if (c.equals(Expr.NULL_TYPE)){
+            return true;
+        }
         if(instance.inheritance.containsKey(c)){
             if (c.equals(p))
                 return true;

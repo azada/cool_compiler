@@ -1,5 +1,7 @@
 package cool.parser.ast;
 
+import cool.parser.Terminals;
+
 /**
  * Created with IntelliJ IDEA.
  * User: pedram
@@ -13,6 +15,7 @@ public abstract class Expr extends Node {
     public static final String STRING_TYPE = "String";
     public static final String OBJECT_TYPE = "Object";
     public static final String UNIT_TYPE = "Unit";
+    public static final String NULL_TYPE = Terminals.NAMES[Terminals.NULL];
 
     public boolean isConsistant(String c, String p){
         return Program.isConsistant(c, p);

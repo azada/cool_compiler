@@ -1,7 +1,5 @@
 package cool.parser.ast;
 
-import java.util.ArrayList;
-
 /**
  * Created with IntelliJ IDEA.
  * User: azada
@@ -9,9 +7,6 @@ import java.util.ArrayList;
  * Time: 6:04 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UnitOperation extends BinaryOperation{
+public abstract class UnitOperation extends BinaryOperation{
 
-    public UnitOperation(ArrayList operands) {
-        super(operands);
-    }
 }
