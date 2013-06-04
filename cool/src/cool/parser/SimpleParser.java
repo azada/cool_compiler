@@ -241,7 +241,7 @@ public class SimpleParser extends Parser {
 			case 30: // primary = NOT primary.p
 			{
 					final Symbol p = _symbols[offset + 2];
-					 ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryBooleanOperation(operands);
+					 ArrayList operands = new ArrayList() ; operands.add(p); return new UnaryNotOperation(operands);
 			}
 			case 31: // primary = primary.p DOT ID.id actuals.a
 			{

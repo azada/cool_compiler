@@ -18,6 +18,11 @@ public class UnaryMinusOperation extends UnaryRealOperation {
     }
 
     @Override
+    public void accept() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
     public boolean check(SymbolNode pTable) {
         boolean result = true;
         Expr temp = ((Expr)(operandsList.get(0)));

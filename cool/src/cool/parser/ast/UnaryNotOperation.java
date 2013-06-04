@@ -17,12 +17,13 @@ public class UnaryNotOperation extends UnaryBooleanOperation{
     }
 
     @Override
+    public boolean check(SymbolNode pTable) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
     public void accept() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
-    public boolean check(SymbolNode pTable) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
-    }
 }
