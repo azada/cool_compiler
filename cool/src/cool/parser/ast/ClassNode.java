@@ -25,7 +25,7 @@ public class ClassNode extends Node {
         this.type = type;
         this.varFormals = varFormals;
         this.featureList = featureList;
-        symbolNode = new SymbolNode() ;
+        symbolNode = new SymbolNode();
         symbolNode.type  = new String(type);
     }
 
@@ -46,21 +46,32 @@ public class ClassNode extends Node {
     @Override
     public boolean check(SymbolNode pTable){
         boolean result = true;
-        this.symbolNode.setParent(null);
-        result = result && defined;
-        for (int i=0 ; i<varFormals.size(); i++){
-            boolean vf = ((Var)this.varFormals.get(i)).check(this.symbolNode);
-            result = result && vf;
-        }
         boolean ex = ext.check(pTable);
         result = result && ex;
         if(ext != null){
             Program.getInstance().inheritance.put(type, ext.type);
             SymbolItem temp = new SymbolItem("SUPER",ext.type,false);
             this.symbolNode.insert(temp);
+            // now we set the parent of symbol node of this class to be it's supers symbol node.
+            if(Program.getInstance().typeClassTable.containsKey(ext.type)){
+                symbolNode.setParent(Program.getInstance().typeClassTable.get(ext.type).symbolNode);
+            }
+
         }
         else{
             Program.getInstance().inheritance.put(type,null);
+            this.symbolNode.setParent(null);
+        }
+
+
+
+        result = result && defined;
+
+
+
+        for (int i=0 ; i<varFormals.size(); i++){
+            boolean vf = ((Var)this.varFormals.get(i)).check(this.symbolNode);
+            result = result && vf;
         }
 
         for (int i=0 ; i < this.featureList.size(); i++){

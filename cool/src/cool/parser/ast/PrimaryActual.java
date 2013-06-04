@@ -26,14 +26,28 @@ public class PrimaryActual extends Expr {
     public boolean check(SymbolNode pTable) {
         // we should check the Type of primary and make sure it has an id with this method.
         boolean result = true;
+        FeatureMethod temp = null;
+        // first we check if we have this type defined
         if (Program.getInstance().getTableRow(primary.expType)!= null){
+            // we check if this primary type has this method defined
             if (!Program.getInstance().getTableRow(primary.expType).containsKey(id)){
-                 Program.addError(new Exeption("type " + primary.expType + " doesn't have method " + id ,this));
-                result = false;
-
+                    // if this Id didn't have this method in itself, we should look up to find this method.
+                    String superType = pTable.lookup("SUPER").getType();
+                    temp = Program.fetchMethod(superType,id);
+                    if(temp == null){
+                        // this means that this method doesn't exsist
+                        Program.addError(new Exeption("type " + primary.expType + " or it's super doesn't have method " + id ,this));
+                        result = false;
+                    }
             }
+            else{
+                //this method exists within this class
+                temp = Program.getInstance().getTableRow(primary.expType).get(id);
+            }
+
         }
         else{
+            // if this primary type has not been defined throw an error
             Program.addError(new Exeption("there is no such type "+ primary.expType + " defined",this));
             result = false;
         }
@@ -43,18 +57,18 @@ public class PrimaryActual extends Expr {
             boolean ac = ((Expr)this.actuals.get(i)).check(pTable);
             result = result && ac;
         }
-        FeatureMethod temp = Program.getInstance().getTableRow(primary.expType).get(id);
-
-        // we should make sure we have the same number of actuals and formals in
-        if (temp.formals.size() != actuals.size()){
-            Program.addError(new Exeption(temp.formals.size()+ " number of argument needed and " + actuals + " are given",this));
-            result = false;
-        }
-        //and make sure we have the same type in actuals as we had in feature methods.
-        for (int i = 0 ; i< temp.formals.size() ; i++){
-            if (!Program.getInstance().isConsistant(((Formal) (temp.formals.get(i))).type, ((Expr) actuals.get(i)).expType)){
-                Program.addError(new Exeption("type of actuals doesn't match argument list defined in the method",this));
+        if (temp != null)  {
+        // we should make sure we have the same number of actuals and formals in method call
+            if (temp.formals.size() != actuals.size()){
+                Program.addError(new Exeption(temp.formals.size()+ " number of argument needed and " + actuals + " are given",this));
                 result = false;
+            }
+            //and make sure we have the same type in actuals as we had in feature methods.
+            for (int i = 0 ; i< temp.formals.size() ; i++){
+                if (!Program.getInstance().isConsistant(((Formal) (temp.formals.get(i))).type, ((Expr) actuals.get(i)).expType)){
+                    Program.addError(new Exeption("type of actuals doesn't match argument list defined in the method",this));
+                    result = false;
+                }
             }
         }
 

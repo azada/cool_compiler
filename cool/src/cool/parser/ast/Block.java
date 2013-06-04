@@ -31,6 +31,7 @@ public class Block extends Expr {
 
     @Override
     public boolean check(SymbolNode pTable){
+        // if the block is empty
         if (!longInit){
             this.expType = UNIT_TYPE;
             return true;

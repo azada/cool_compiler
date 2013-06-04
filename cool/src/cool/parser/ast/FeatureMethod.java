@@ -31,9 +31,8 @@ public class FeatureMethod extends Feature {
     @Override
     public boolean check(SymbolNode pTable) {
         boolean result = true;
-
-        if ( Program.typeTableContains(pTable.type))
-        {
+        this.symbolNode.setParent(pTable);
+        if ( Program.typeTableContains(pTable.type)){
             if (Program.getInstance().getTableRow(pTable.type).containsKey(id)){
                 Program.addError(new Exeption("method "+ this.id + " has duplicate definitions " , this));
                 result = false;
@@ -47,7 +46,7 @@ public class FeatureMethod extends Feature {
         }
 
         //we set the parent node to be the pTable
-        this.symbolNode.setParent(pTable);
+
         for (int i = 0 ; i< formals.size() ; i++){
             boolean fml = ((Formal)formals.get(i)).check(this.symbolNode);
             result = result &&fml;
@@ -57,7 +56,7 @@ public class FeatureMethod extends Feature {
         ///////////////////////here we check if we return the correct type in methods ///////////////////////////////
 //        System.out.println("expression type is" + expr.expType);
         if(!Program.isConsistant(expr.expType,type)){
-            Program.addError(new Exeption("the return type of this method is not " + expr.expType ,this));
+            Program.addError(new Exeption("the return type of this expression is not consistant with " + type ,this));
             result = false;
         }
         ////////////////////////////////////////////////////////////////
