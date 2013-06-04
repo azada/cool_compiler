@@ -45,11 +45,10 @@ public class SuperActual extends Expr {
         for (int i = 0 ; i< temp.formals.size() ; i++){
             if (!Program.getInstance().isConsistant(((Formal) (temp.formals.get(i))).type, ((Expr) actuals.get(i)).expType)){
                 Program.addError(new Exeption("type of actuals doesn't match argument list defined in the method",this));
-                return false;
+                result = false;
+                break;
             }
         }
-
-
         //To change body of implemented methods use File | Settings | File Templates.
         return result;
     }
