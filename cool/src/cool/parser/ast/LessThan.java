@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class LessThan extends BooleanOperation {
     public LessThan(ArrayList operands) {
         operandsList = operands;
-
+        this.expType = BOOLEAN_TYPE;
     }
 
     @Override

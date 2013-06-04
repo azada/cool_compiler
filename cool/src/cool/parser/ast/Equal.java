@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Equal extends BooleanOperation {
     public Equal(ArrayList operands) {
         operandsList = operands;
+        this.expType = BOOLEAN_TYPE;
     }
 
     @Override

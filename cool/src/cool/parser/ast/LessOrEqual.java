@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class LessOrEqual extends BooleanOperation {
     public LessOrEqual(ArrayList operands) {
         operandsList = operands;
+        this.expType = BOOLEAN_TYPE;
     }
 
     @Override
