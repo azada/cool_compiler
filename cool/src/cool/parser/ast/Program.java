@@ -18,7 +18,7 @@ import java.util.HashMap;
 public class Program {
 
     private static ArrayList classes = new ArrayList();
-    ///////////////////////type /////////// function name, it's return type
+    ///////////////////////type /////////// function name, it's object
     private static HashMap<String,HashMap<String,FeatureMethod> > typeTable = new HashMap<String,HashMap<String,FeatureMethod> >() ;
     // in order to store the class's object as a pair to the classe's name, we need another hashmap.
     public static HashMap<String , ClassNode> typeClassTable = new HashMap<String, ClassNode>();
@@ -56,6 +56,14 @@ public class Program {
         }
         else
             return false;
+    }
+    public static String getSuper(String child){
+        if(instance.inheritance.containsKey(child)){
+            return instance.inheritance.get(child);
+        }
+        else{
+            return null;
+        }
     }
     public static String mutualParent(String a, String b){
         ArrayList<String> aList = new ArrayList<String>();
@@ -96,6 +104,33 @@ public class Program {
         }
         return result;
 
+
+    }
+    // we need a method to look up a "method" starting from the base class up untill the final class
+    public static FeatureMethod fetchMethod(String superType,String method){
+            if(superType == null){
+                return null;
+            }
+            // if the class exists,
+            HashMap<String, FeatureMethod> hashTemp = getTableRow(superType);
+            if(hashTemp != null){
+                // then we check if it has this method
+                FeatureMethod tempMethod = hashTemp.get(method);
+                if(tempMethod!= null){
+                    //it means that this method exists there
+                    return tempMethod;
+                }
+                else{
+                    //it means that this method doesn't exist there
+                    // then we should get this and go up until we find it.
+                    String tempSuper = getSuper(superType);
+                    return fetchMethod(superType, method);
+                }
+            }
+            else{
+                String tempSuper = getSuper(superType);
+                return fetchMethod(superType, method);
+            }
 
     }
     public static ArrayList getClasses(){

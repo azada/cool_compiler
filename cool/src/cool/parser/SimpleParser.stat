@@ -223,22 +223,22 @@
 41:	ID: SHIFT; goto 42
 42:	LPAREN: SHIFT; goto 44
 	actuals: SHIFT; goto 43
-43:	RBRACE: REDUCE lexpr = SUPER DOT ID actuals.a
-	RPAREN: REDUCE lexpr = SUPER DOT ID actuals.a
-	MINUS: REDUCE lexpr = SUPER DOT ID actuals.a
-	COMMA: REDUCE lexpr = SUPER DOT ID actuals.a
-	SEMI: REDUCE lexpr = SUPER DOT ID actuals.a
-	CASE: REDUCE lexpr = SUPER DOT ID actuals.a
-	ELSE: REDUCE lexpr = SUPER DOT ID actuals.a
-	LE: REDUCE lexpr = SUPER DOT ID actuals.a
-	LT: REDUCE lexpr = SUPER DOT ID actuals.a
-	EQUALS: REDUCE lexpr = SUPER DOT ID actuals.a
-	PLUS: REDUCE lexpr = SUPER DOT ID actuals.a
-	TIMES: REDUCE lexpr = SUPER DOT ID actuals.a
-	DIV: REDUCE lexpr = SUPER DOT ID actuals.a
-	DOT: REDUCE lexpr = SUPER DOT ID actuals.a
-	MATCH: REDUCE lexpr = SUPER DOT ID actuals.a
-	ASSIGN: REDUCE lexpr = SUPER DOT ID actuals.a
+43:	RBRACE: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	RPAREN: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	MINUS: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	COMMA: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	SEMI: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	CASE: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	ELSE: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	LE: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	LT: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	EQUALS: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	PLUS: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	TIMES: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	DIV: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	DOT: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	MATCH: REDUCE lexpr = SUPER DOT ID.id actuals.a
+	ASSIGN: REDUCE lexpr = SUPER DOT ID.id actuals.a
 44:	RPAREN: REDUCE empty = 
 	MINUS: SHIFT; goto 113
 	COMMA: REDUCE empty = 

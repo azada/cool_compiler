@@ -338,11 +338,13 @@ public class SimpleParser extends Parser {
 			{
 					 return new Symbol(new ArrayList());
 			}
-			case 47: // lexpr = SUPER DOT ID actuals.a
+			case 47: // lexpr = SUPER DOT ID.id actuals.a
 			{
+					final Symbol _symbol_id = _symbols[offset + 3];
+					final String id = (String) _symbol_id.value;
 					final Symbol _symbol_a = _symbols[offset + 4];
 					final ArrayList a = (ArrayList) _symbol_a.value;
-					 return new SuperActual(a);
+					 return new SuperActual(id,a);
 			}
 			case 48: // lexpr = ident.id
 			{

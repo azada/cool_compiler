@@ -12,6 +12,7 @@ import cool.symbol.SymbolTable;
  */
 public class NullNode extends Primary {
     public NullNode() {
+        this.expType = NULL_TYPE;
 
     }
 

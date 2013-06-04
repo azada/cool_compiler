@@ -56,6 +56,8 @@ public class ClassNode extends Node {
         result = result && ex;
         if(ext != null){
             Program.getInstance().inheritance.put(type, ext.type);
+            SymbolItem temp = new SymbolItem("SUPER",ext.type,false);
+            this.symbolNode.insert(temp);
         }
         else{
             Program.getInstance().inheritance.put(type,null);

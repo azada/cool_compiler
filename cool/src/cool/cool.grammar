@@ -165,7 +165,7 @@ case_block =
 
 
 lexpr	=
-         SUPER DOT ID actuals.a                                         {: return new SuperActual(a); :}
+         SUPER DOT ID.id actuals.a                                         {: return new SuperActual(id,a); :}
 		|	ident.id                                                    {: return id; :}
 		;
 
